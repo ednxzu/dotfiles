@@ -2,8 +2,8 @@
 
 # If not running interactively, don't do anything
 case $- in
-    *i*) ;;
-      *) return;;
+*i*) ;;
+*) return ;;
 esac
 
 #########################
@@ -80,7 +80,6 @@ source_all_files "$HOME/.bash_config.d/completion.d"
 
 # Source tool configurations
 source_tool_configs "$HOME/.bash_config.d/tools.d"
-
 
 ###############
 # Final stage #

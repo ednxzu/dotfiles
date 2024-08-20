@@ -9,6 +9,9 @@
 .ssh/**
 !.ssh/authorized_keys
 
+# ignore font uuid file
+.fonts/.uuid
+
 # only track specific .icons files
 .icons/**
 !.icons/default**

@@ -47,13 +47,17 @@ export OS_CLIENT_CONFIG_FILE=$HOME/.config/openstack/clouds.yaml
 # Import configuration #
 ########################
 
+if [ -f "/etc/bash_completion" ]; then
+  . /etc/bash_completion
+fi
+
 source_all_files() {
   local dir_path="$1"
 
   if [ -d "$dir_path" ]; then
-    for file in "$dir_path"/*; do
+    for file in "$dir_path"/* "$dir_path"/.[!.]* "$dir_path"/..?*; do
       if [ -r "$file" ]; then
-        source "$file"
+        . $file
       fi
     done
   fi
@@ -66,7 +70,7 @@ source_tool_configs() {
     for subdir in "$tools_dir"/*/; do
       local include_file="${subdir}.include.sh"
       if [ -r "$include_file" ]; then
-        source "$include_file"
+        . $include_file
       fi
     done
   fi

@@ -1,0 +1,18 @@
+# only track specific .config files
+.config/**
+!.config/alacritty**
+!.config/fontconfig**
+!.config/systemd/user/ssh-agent.service
+!.config/flameshot**
+
+# only track specific .ssh files
+.ssh/**
+!.ssh/authorized_keys
+
+# only track specific .icons files
+.icons/**
+!.icons/default**
+
+# only track specific .local files
+.local/**
+!.local/share/fonts

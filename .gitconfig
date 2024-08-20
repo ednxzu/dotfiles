@@ -1,0 +1,45 @@
+[user]
+email = bertrand.lanson@protonmail.com
+name = Bertrand Lanson
+signingkey = /home/lanson/.ssh/id_lanson.pub
+
+[credential]
+helper = store --file ~/.git-credentials
+
+[gpg]
+format = ssh
+
+[commit]
+gpgsign = true
+
+[core]
+editor = code --wait
+ignorecase = false
+excludesFile = ~/.gitignore
+
+[diff]
+tool = vscode
+
+[difftool "vscode"]
+cmd = code --wait --diff $LOCAL $REMOTE
+
+[merge]
+tool = vscode
+
+[mergetool "vscode"]
+cmd = code-insiders --wait --merge $REMOTE $LOCAL $BASE $MERGED
+
+[alias]
+lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
+prune-branches = !"git remote prune ${1:-origin} && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
+branches = branch -a
+tags = tag -n1 --list
+stashes = stash list
+pfl = push --force-with-lease
+rcommit = commit --amend --no-edit
+
+[includeIf "gitdir:/home/lanson/git/gitlab.devau.co/"]
+path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.devau.co
+
+[includeIf "gitdir:/home/lanson/git/gitlab.com/"]
+path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.com

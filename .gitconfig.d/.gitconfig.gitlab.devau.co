@@ -1,0 +1,5 @@
+[user]
+	email = bertrand.lanson@ednz.fr
+	name = Bertrand Lanson
+	signingkey = /home/lanson/.ssh/id_lanson.pub
+

@@ -16,6 +16,9 @@
 .icons/**
 !.icons/default**
 
+# ignore completion files
+.bash_config.d/completion.d/*
+
 # only track specific .local files
 .local/**
 !.local/share/fonts

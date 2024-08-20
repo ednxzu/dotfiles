@@ -23,7 +23,7 @@ shopt -s histappend
 
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-    debian_chroot=$(cat /etc/debian_chroot)
+  debian_chroot=$(cat /etc/debian_chroot)
 fi
 
 #########################
@@ -48,28 +48,28 @@ export OS_CLIENT_CONFIG_FILE=$HOME/.config/openstack/clouds.yaml
 ########################
 
 source_all_files() {
-    local dir_path="$1"
+  local dir_path="$1"
 
-    if [ -d "$dir_path" ]; then
-        for file in "$dir_path"/*; do
-            if [ -r "$file" ]; then
-                source "$file"
-            fi
-        done
-    fi
+  if [ -d "$dir_path" ]; then
+    for file in "$dir_path"/*; do
+      if [ -r "$file" ]; then
+        source "$file"
+      fi
+    done
+  fi
 }
 
 source_tool_configs() {
-    local tools_dir="$1"
+  local tools_dir="$1"
 
-    if [ -d "$tools_dir" ]; then
-        for subdir in "$tools_dir"/*/; do
-            local include_file="${subdir}.include.sh"
-            if [ -r "$include_file" ]; then
-                source "$include_file"
-            fi
-        done
-    fi
+  if [ -d "$tools_dir" ]; then
+    for subdir in "$tools_dir"/*/; do
+      local include_file="${subdir}.include.sh"
+      if [ -r "$include_file" ]; then
+        source "$include_file"
+      fi
+    done
+  fi
 }
 
 # Source alias configurations

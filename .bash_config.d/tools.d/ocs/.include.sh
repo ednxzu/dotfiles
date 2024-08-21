@@ -2,7 +2,7 @@
 
 # Function to list available clouds using Python parser
 list_clouds() {
-  python3 ~/git/github/dotfiles/.bash_config.d/tools.d/ocs/extras/parse_clouds.py
+  python3 $HOME/.bash_config.d/tools.d/ocs/extras/parse_clouds.py
 }
 
 # Function to check if a cloud name exists

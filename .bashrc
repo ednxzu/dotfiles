@@ -6,6 +6,14 @@ case $- in
 *) return ;;
 esac
 
+#############################
+# Source configuration file #
+#############################
+
+if [ -f "$HOME/.bash_config.d/config.sh" ]; then
+  . $HOME/.bash_config.d/config.sh
+fi
+
 #########################
 # History configuration #
 #########################
@@ -42,6 +50,17 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
 
 # set openstack clouds.yaml very explicit
 export OS_CLIENT_CONFIG_FILE=$HOME/.config/openstack/clouds.yaml
+
+#####################
+# SSH configuration #
+#####################
+
+if $USE_GNUPG_FOR_SSH; then
+  export GPG_TTY="$(tty)"
+  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+  gpgconf --launch gpg-agent
+  gpg-connect-agent updatestartuptty /bye >/dev/null
+fi
 
 ########################
 # Import configuration #

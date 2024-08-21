@@ -4,7 +4,7 @@ RCS
 .+,v
 
 CVS
-\.\#.+       # CVS conflict files / emacs lock files
+\.\#.+ # CVS conflict files / emacs lock files
 \.cvsignore
 
 \.svn
@@ -15,11 +15,12 @@ _darcs
 \.gitignore
 \.gitkeep
 
-.+~          # emacs backup files
-\#.*\#       # emacs autosave files
+.+~    # emacs backup files
+\#.*\# # emacs autosave files
 
 ^/README.*
 ^/LICENSE.*
 ^/COPYING
 
-bootstrap.sh
+bootstrap.d
+\.bash_config.d/config.sh

@@ -32,3 +32,6 @@ alias fgrep='fgrep --color=auto'
 
 # humanly readable mount command
 alias mount='mount | column -t'
+
+# ensure ssh does not break because of alacritty
+alias ssh='TERM=xterm-256color ssh'

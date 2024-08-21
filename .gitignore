@@ -22,3 +22,6 @@
 # only track specific .local files
 .local/**
 !.local/share/fonts
+
+# ignore local config.sh file
+.bash_config.d/config.sh

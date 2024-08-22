@@ -112,6 +112,12 @@ source_all_files "$HOME/.bash_config.d/completion.d"
 # Source tool configurations
 source_tool_configs "$HOME/.bash_config.d/tools.d"
 
+##############
+# Local path #
+##############
+
+export PATH="$HOME/.local/bin:$PATH"
+
 ###############
 # Final stage #
 ###############

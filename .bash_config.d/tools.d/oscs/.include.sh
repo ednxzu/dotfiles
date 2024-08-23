@@ -1,3 +1,5 @@
+#! /bin/bash
+
 # Function to list available clouds using Python parser
 list_clouds() {
   python3 $HOME/.bash_config.d/tools.d/oscs/extras/parse_clouds.py

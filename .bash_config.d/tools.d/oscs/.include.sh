@@ -26,9 +26,17 @@ get_fzf_options() {
 
 # oscs function to switch OpenStack clouds
 oscs() {
-  case "$1" in
+  local command="$1"
+  local cloud_name="$2"
+
+  # Default to "set" if no command is provided
+  if [[ -z "$command" ]]; then
+    command="set"
+  fi
+
+  case "$command" in
   set)
-    if [[ -z "$2" ]]; then
+    if [[ -z "$cloud_name" ]]; then
       # No cloud name provided, show interactive menu with fzf
       local clouds_list=$(list_clouds)
       local num_clouds=$(echo "$clouds_list" | wc -l)
@@ -52,11 +60,11 @@ oscs() {
       fi
     else
       # Cloud name provided, validate and set it
-      if cloud_exists "$2"; then
-        export OS_CLOUD="$2"
+      if cloud_exists "$cloud_name"; then
+        export OS_CLOUD="$cloud_name"
         echo "Switched to cloud: $OS_CLOUD"
       else
-        echo "Error: Cloud '$2' does not exist."
+        echo "Error: Cloud '$cloud_name' does not exist."
         return 1
       fi
     fi

@@ -1,8 +1,6 @@
-#! /bin/bash
-
 # Function to list available clouds using Python parser
 list_clouds() {
-  python3 $HOME/.bash_config.d/tools.d/ocs/extras/parse_clouds.py
+  python3 $HOME/.bash_config.d/tools.d/oscs/extras/parse_clouds.py
 }
 
 # Function to check if a cloud name exists
@@ -15,8 +13,17 @@ cloud_exists() {
   fi
 }
 
-# ocs function to switch OpenStack clouds
-ocs() {
+# Function to get the fzf options
+get_fzf_options() {
+  if [[ -z "$FZF_DEFAULT_OPTS" ]]; then
+    echo "--color=dark --color=fg:-1,bg:-1,hl:#eb1944,fg+:-1,bg+:-1,hl+:#eb1944 --color=info:#f8f8f2,prompt:#f8f8f2,pointer:#eb1944,marker:#ff87d7,spinner:#ff87d7 --color=border:#eb1944"
+  else
+    echo "$FZF_DEFAULT_OPTS"
+  fi
+}
+
+# oscs function to switch OpenStack clouds
+oscs() {
   case "$1" in
   set)
     if [[ -z "$2" ]]; then
@@ -30,8 +37,10 @@ ocs() {
         menu_height=14
       fi
 
+      local fzf_options=$(get_fzf_options)
+
       echo "Select a cloud environment:"
-      local cloud=$(echo "$clouds_list" | fzf --height="$menu_height" --layout=reverse-list --border --prompt="Select cloud> ")
+      local cloud=$(echo "$clouds_list" | fzf --height="$menu_height" --layout=reverse-list --border --prompt="Select cloud> " $fzf_options)
 
       if [[ -n "$cloud" ]]; then
         export OS_CLOUD="$cloud"
@@ -55,13 +64,13 @@ ocs() {
     echo "OS_CLOUD variable has been unset"
     ;;
   *)
-    echo "Usage: ocs {set [cloud_name] | unset}"
+    echo "Usage: oscs {set [cloud_name] | unset}"
     ;;
   esac
 }
 
-# Autocomplete function for ocs
-_ocs_autocomplete() {
+# Autocomplete function for oscs
+_oscs_autocomplete() {
   local cur_word="${COMP_WORDS[COMP_CWORD]}"
 
   if [[ ${COMP_CWORD} -eq 2 && "${COMP_WORDS[1]}" == "set" ]]; then
@@ -74,4 +83,4 @@ _ocs_autocomplete() {
 }
 
 # Register the autocompletion function
-complete -F _ocs_autocomplete ocs
+complete -F _oscs_autocomplete oscs

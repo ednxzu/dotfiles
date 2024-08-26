@@ -25,3 +25,5 @@
 
 # ignore local config.sh file
 .bash_config.d/config.sh
+
+.bash_config.d/specific.d/*

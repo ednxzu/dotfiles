@@ -13,11 +13,13 @@ click-help-colors
 cryptography
 decorator
 docker
+docsible
 dogpile.cache
 enrich
 filelock
 hvac
 idna
+importlib_metadata
 iso8601
 Jinja2
 jmespath
@@ -62,3 +64,4 @@ urllib3
 wcmatch
 websocket-client
 yamllint
+zipp

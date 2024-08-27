@@ -1,7 +1,7 @@
 appdirs
 attrs
 autopage
-Babel
+babel
 certifi
 cffi
 charset-normalizer
@@ -13,7 +13,7 @@ decorator
 docker
 dogpile.cache
 idna
-importlib-metadata
+importlib_metadata
 iso8601
 jmespath
 jsonpatch
@@ -40,6 +40,7 @@ oslo.serialization
 oslo.utils
 packaging
 pbr
+platformdirs
 ply
 prettytable
 pycparser

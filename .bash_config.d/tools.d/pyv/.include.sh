@@ -25,7 +25,7 @@ ensure_venv_dir() {
 list_venvs() {
   local venv_dir
   venv_dir=$(get_venv_dir)
-  find "$venv_dir" -maxdepth 1 -mindepth 1 -type d -exec basename {} \;
+  find -L "$venv_dir" -maxdepth 1 -mindepth 1 -type d -exec basename {} \;
 }
 
 get_fzf_options() {

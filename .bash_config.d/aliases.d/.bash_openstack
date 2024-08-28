@@ -1,0 +1,5 @@
+#! /bin/bash
+
+# openstack aliases
+alias os='openstack'
+complete -F _openstack os

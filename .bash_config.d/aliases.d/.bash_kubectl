@@ -1,5 +1,56 @@
 #! /bin/bash
 
+function kubelogin_install {
+	kubelogin_version=${1:-latest}
+	kubelogin_url=""
+	kubelogin_temp_dir=/tmp/kubelogin
+	kubelogin_binary_path="/usr/local/bin/kubectl-oidc_login"
+
+	function handle_error {
+		echo "Error: $1"
+		cleanup
+		exit 1
+	}
+
+	function cleanup {
+		rm -rf $kubelogin_temp_dir
+	}
+
+	if [ "$kubelogin_version" == "latest" ]; then
+		kubelogin_version=$(curl --silent https://api.github.com/repos/int128/kubelogin/releases/latest | jq -r .tag_name)
+		if [ -z "$kubelogin_version" ]; then
+			handle_error "Failed to fetch the latest kubelogin version."
+		fi
+	fi
+
+	kubelogin_url="https://github.com/int128/kubelogin/releases/download/${kubelogin_version}/kubelogin_linux_amd64.zip"
+
+	if ! mkdir -p $kubelogin_temp_dir; then
+		handle_error "Failed to create temporary directory."
+	fi
+
+	if ! curl --silent --fail -Lo $kubelogin_temp_dir/kubelogin.zip "$kubelogin_url"; then
+		handle_error "Failed to download kubelogin version $kubelogin_version. Please check if the version exists."
+	fi
+
+	if ! unzip -q $kubelogin_temp_dir/kubelogin.zip -d $kubelogin_temp_dir; then
+		handle_error "Failed to extract the kubelogin zip file."
+	fi
+
+	if ! sudo mv $kubelogin_temp_dir/kubelogin $kubelogin_binary_path; then
+		handle_error "Failed to move kubelogin to /usr/local/bin/kubectl-oidc_login."
+	fi
+
+	if ! sudo chmod +x $kubelogin_binary_path; then
+		handle_error "Failed to set executable permissions for kubectl-oidc_login."
+	fi
+
+	cleanup
+
+	echo "Install: success"
+	echo "Kubelogin: $($kubelogin_binary_path --version)"
+}
+
 # kubectl aliases
 alias k='kubectl'
 complete -F __start_kubectl k

@@ -1,5 +1,7 @@
 #! /bin/bash
 
+export SOPS_AGE_KEY_FILE="$HOME/.config/sops/age/keys.txt"
+
 function age_install {
 	age_version=${1:-latest}
 	age_temp_dir=/tmp/age-tmp

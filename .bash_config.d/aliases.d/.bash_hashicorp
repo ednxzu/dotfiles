@@ -17,3 +17,7 @@ function nomad_login {
   export NOMAD_TOKEN=$(nomad login -method=authentik -json | jq -r .SecretID)
   echo "Nomad token: $NOMAD_TOKEN"
 }
+
+complete -C /usr/bin/nomad nomad
+complete -C /usr/bin/consul consul
+complete -C /usr/bin/vault vault

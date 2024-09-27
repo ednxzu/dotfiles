@@ -49,3 +49,6 @@ path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.infomaniak.ch
 
 [includeIf "gitdir:/home/lanson/git/salsa.debian.org/"]
 path = /home/lanson/.gitconfig.d/.gitconfig.salsa.debian.org
+
+[includeIf "gitdir:/home/lanson/git/opendev.org/"]
+path = /home/lanson/.gitconfig.d/.gitconfig.opendev.org

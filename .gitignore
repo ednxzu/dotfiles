@@ -1,6 +1,7 @@
 # only track specific .config files
 .config/**
 !.config/alacritty**
+!.config/kitty**
 !.config/fontconfig**
 !.config/systemd/user/ssh-agent.service
 !.config/flameshot**

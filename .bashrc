@@ -121,6 +121,12 @@ source_all_files "$HOME/.bash_config.d/specific.d"
 
 export PATH="$HOME/.local/bin:$PATH"
 
+##############
+# Cargo path #
+##############
+
+source $HOME/.cargo/env
+
 ###############
 # Final stage #
 ###############

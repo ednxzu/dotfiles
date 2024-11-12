@@ -6,7 +6,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # always use bat
-alias cat='bat'
+alias cat='batcat'
 
 # see mounted drives only
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"

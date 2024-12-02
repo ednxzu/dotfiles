@@ -70,6 +70,9 @@ if is_true $USE_GNUPG_FOR_SSH; then
   gpg-connect-agent updatestartuptty /bye >/dev/null
 fi
 
+# ensure ssh won't break because of missing term files for kitty or alacritty
+export TERM=xterm-256color
+
 ########################
 # Import configuration #
 ########################

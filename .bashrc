@@ -71,6 +71,7 @@ if is_true $USE_GNUPG_FOR_SSH; then
 fi
 
 # ensure ssh won't break because of missing term files for kitty or alacritty
+# the real TERM value should be xterm-kitty but won't work on most machines
 export TERM=xterm-256color
 
 ########################
@@ -128,7 +129,7 @@ export PATH="$HOME/.local/bin:$PATH"
 # Cargo path #
 ##############
 
-source $HOME/.cargo/env
+# source $HOME/.cargo/env
 
 ###############
 # Final stage #

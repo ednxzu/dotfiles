@@ -28,3 +28,6 @@
 .bash_config.d/config.sh
 
 .bash_config.d/specific.d/*
+
+# ignore venvs content
+.venvs/*/*

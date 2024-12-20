@@ -23,6 +23,9 @@ alias sha='shasum -a 256 '
 # ping but it stops at 5
 alias ping='ping -c 5'
 
+# ip should always have colors (it's pretty)
+alias ip='ip -c'
+
 # some packages manager aliases
 alias apt-get='sudo apt-get'
 alias apt='sudo apt'

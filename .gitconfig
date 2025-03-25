@@ -47,6 +47,9 @@ path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.com
 [includeIf "gitdir:/home/lanson/git/gitlab.infomaniak.ch/"]
 path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.infomaniak.ch
 
+[includeIf "gitdir:/home/lanson/git/ansible_collections/infomaniak/"]
+path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.infomaniak.ch
+
 [includeIf "gitdir:/home/lanson/git/salsa.debian.org/"]
 path = /home/lanson/.gitconfig.d/.gitconfig.salsa.debian.org
 

@@ -68,6 +68,17 @@ if is_true $USE_GNUPG_FOR_SSH; then
   export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   gpgconf --launch gpg-agent
   gpg-connect-agent updatestartuptty /bye >/dev/null
+else
+  # Stop gpg-agent to prevent interference
+  gpgconf --kill gpg-agent
+
+  # Start ssh-agent if it's not already running
+  if ! pgrep -u "$USER" ssh-agent >/dev/null; then
+    eval "$(ssh-agent -s)" >/dev/null
+  fi
+
+  # Set SSH_AUTH_SOCK dynamically from running ssh-agent
+  export SSH_AUTH_SOCK=$(find /tmp -type s -user "$USER" -name 'agent.*' 2>/dev/null | head -n 1)
 fi
 
 # ensure ssh won't break because of missing term files for kitty or alacritty

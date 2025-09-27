@@ -3,6 +3,7 @@
   "editor.fontSize": 13,
   "editor.tabSize": 2,
   "editor.fontFamily": "'JetBrains Mono Nerd Font', 'monospace', 'monospace'",
+  "editor.fontWeight": "550",
   "workbench.colorCustomizations": {
     "editorError.foreground": "#00000000",
     "editorError.background": "#ff555522",

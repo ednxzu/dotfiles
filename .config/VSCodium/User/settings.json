@@ -1,0 +1,143 @@
+{
+  "workbench.colorTheme": "Dracula Theme",
+  "editor.fontSize": 13,
+  "editor.tabSize": 2,
+  "editor.fontFamily": "'JetBrains Mono Nerd Font', 'monospace', 'monospace'",
+  "workbench.colorCustomizations": {
+    "editorError.foreground": "#00000000",
+    "editorError.background": "#ff555522",
+    "editorWarning.foreground": "#00000000",
+    "editorWarning.background": "#bd93f922"
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "editor.renderWhitespace": "all",
+  "files.trimTrailingWhitespace": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.detectIndentation": false,
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.indentSize": "tabSize",
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true
+  },
+  "[hcl]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "hashicorp.hcl",
+    "editor.formatOnSave": true
+  },
+  "[terraform]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true
+  },
+  "[yaml]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "keep",
+    "editor.defaultFormatter": "redhat.vscode-yaml",
+    "editor.formatOnSave": true
+  },
+  "[json]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": false,
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "[jsonc]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true
+  },
+  "[shellscript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "[dockerfile]": {
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+  "[ansible]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": false
+  },
+  "editor.formatOnSave": true,
+  "yaml.format.bracketSpacing": true,
+  "git.enableSmartCommit": true,
+  "discord.removeRemoteRepository": true,
+  "sops.configPath": "./.sops.yaml",
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path-linux": "/home/lanson/.local/state/vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vs-kubernetes.crd-code-completion": "enabled"
+  },
+  "indentRainbow.indicatorStyle": "light",
+  "indentRainbow.lightIndicatorStyleLineWidth": 1,
+  "indentRainbow.colors": [
+    "rgba(139, 233, 253, 0.4)",
+    "rgba(80, 250, 123, 0.4)",
+    "rgba(255, 184, 108, 0.4)",
+    "rgba(255, 121, 198, 0.4)",
+    "rgba(189, 147, 249, 0.4)",
+    "rgba(255, 85, 85, 0.4)",
+    "rgba(241, 250, 140, 0.4)"
+  ],
+  "[go]": {
+    "editor.formatOnSave": true
+  },
+  "gitlens.rebaseEditor.ordering": "asc",
+  "editor.minimap.showSlider": "always",
+  "shellformat.effectLanguages": [
+    "shellscript",
+    "dotenv",
+    "hosts",
+    "jvmoptions",
+    "ignore",
+    "gitignore",
+    "properties",
+    "spring-boot-properties",
+    "azcli"
+  ],
+  "files.associations": {
+    "forward-records.conf": "plaintext"
+  },
+  "redhat.telemetry.enabled": false,
+  "ansible.validation.lint.enabled": false,
+  "ansible.validation.enabled": false,
+  "[ignore]": {
+    "editor.defaultFormatter": "foxundermoon.shell-format"
+  },
+  "terminal.integrated.detectLocale": "off",
+  "terminal.integrated.scrollback": 30000,
+  "githubLocalActions.workflowsDirectory": ".gitea/workflows",
+  "docker.extension.enableComposeLanguageServer": false,
+  "[toml]": {
+    "editor.defaultFormatter": "tamasfe.even-better-toml"
+  },
+  "remote.autoForwardPortsSource": "hybrid",
+  "github.copilot.enable": {
+    "*": true,
+    "plaintext": false,
+    "markdown": true,
+    "scminput": false
+  },
+  "explorer.confirmDelete": false,
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  }
+}

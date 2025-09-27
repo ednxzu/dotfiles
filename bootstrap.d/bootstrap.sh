@@ -1,38 +1,38 @@
-#! /bin/bash
+#!/usr/bin/env bash
+set -euo pipefail
 
-#############
-# Variables #
-#############
-dotfiles_repo=$HOME/.dotfiles
-bootstrap_packages=("nala" "python3" "python3-pip" "stow")
+DOTFILES="$HOME/.dotfiles"
 
-#############
-# Bootstrap #
-#############
+echo "[BOOTSTRAP] Starting..."
 
-function install_bootstrap_packages {
-  for pkg in ${bootstrap_packages[@]}; do
-    echo "sudo apt install -y $pkg"
-  done
-  echo "sudo apt install -y ${bootstrap_packages[@]}"
-}
+# Install required base packages
+source "$DOTFILES/bootstrap.d/packages.sh"
+install_pacman_packages
 
-function source_config_file {
-  if [ -f "$HOME/.bash_config.d/config.sh"]; then
-    . $HOME/.bash_config.d/config.sh
-  else
-    echo "ERROR: file $HOME/.bash_config.d/config.sh not found"
-    exit 1
-  fi
-}
+# Run first stow
+rm .bashrc .bash_logout
+cd $DOTFILES
+stow -d "$DOTFILES" -t "$HOME"
+cd $HOME
 
-function source_helpers_file {
-  if [ -f "$HOME/.bash_config.d/helpers.sh"]; then
-    . $HOME/.bash_config.d/helpers.sh
-  else
-    echo "ERROR: file $HOME/.bash_config.d/helpers.sh not found"
-    exit 1
-  fi
-}
+# Install the rest of the packages
+install_yay
+install_aur_packages
 
-install_bootstrap_packages
+# Install themes
+source "$DOTFILES/bootstrap.d/theme.sh"
+
+# Apply dconf settings
+source "$DOTFILES/bootstrap.d/dconf.sh"
+
+# Install fonts
+source "$DOTFILES/bootstrap.d/fonts.sh"
+
+# Enable user systemd services
+source "$DOTFILES/bootstrap.d/systemd.sh"
+
+# Add sudoer files
+source "$DOTFILES/bootstrap.d/sudoers.sh"
+
+
+echo "[BOOTSTRAP] Done!"

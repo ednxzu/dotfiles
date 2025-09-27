@@ -24,3 +24,7 @@ _darcs
 
 bootstrap.d
 \.bash_config.d/config.sh
+
+\.pre-commit-config.yaml
+
+scripts

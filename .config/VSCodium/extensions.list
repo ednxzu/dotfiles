@@ -1,3 +1,4 @@
+3timeslazy.vscodium-devpodcontainers
 4ops.terraform
 aaron-bond.better-comments
 bierner.markdown-mermaid
@@ -12,6 +13,7 @@ golang.go
 hashicorp.hcl
 hashicorp.terraform
 icrawl.discord-vscode
+jeanp413.open-remote-ssh
 mikestead.dotenv
 ms-azuretools.vscode-containers
 ms-kubernetes-tools.vscode-kubernetes-tools

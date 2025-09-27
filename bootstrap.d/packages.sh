@@ -51,6 +51,7 @@ EXTRTA_PACKAGES=(
   git-delta
   signal-desktop
   discord
+  devpod
 )
 
 install_pacman_packages() {

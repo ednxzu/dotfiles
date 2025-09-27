@@ -13,21 +13,21 @@ format = ssh
 gpgsign = true
 
 [core]
-editor = code --wait
+editor = codium --wait
 ignorecase = false
 excludesFile = ~/.gitignore
 
 [diff]
-tool = vscode
+tool = vscodium
 
-[difftool "vscode"]
-cmd = code --wait --diff $LOCAL $REMOTE
+[difftool "vscodium"]
+cmd = codium --wait --diff $LOCAL $REMOTE
 
 [merge]
-tool = vscode
+tool = vscodium
 
-[mergetool "vscode"]
-cmd = code-insiders --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[mergetool "vscodium"]
+cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
 [alias]
 lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all

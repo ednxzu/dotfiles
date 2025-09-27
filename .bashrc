@@ -101,11 +101,11 @@ source_tool_configs() {
   fi
 }
 
-# Source alias configurations
-source_all_files "$HOME/.bash_config.d/aliases.d"
-
 # Source completion configurations
 source_all_files "$HOME/.bash_config.d/completion.d"
+
+# Source alias configurations
+source_all_files "$HOME/.bash_config.d/aliases.d"
 
 # Source tool configurations
 source_tool_configs "$HOME/.bash_config.d/tools.d"

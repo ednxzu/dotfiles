@@ -1,6 +1,0 @@
-#! /bin/bash
-
-# update starship
-function starship_update {
-  curl -sS https://starship.rs/install.sh | sh
-}

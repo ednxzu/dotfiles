@@ -1,6 +1,0 @@
----
-# yaml-language-server: $schema=https://taskfile.dev/schema.json
-version: "3"
-
-includes:
-  misc: .bash_config.d/.tasks.d/misc/Taskfile.yml

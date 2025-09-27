@@ -6,7 +6,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # always use bat
-alias cat='batcat'
+alias cat='bat'
 
 # see mounted drives only
 alias mnt="mount | awk -F' ' '{ printf \"%s\t%s\n\",\$1,\$3; }' | column -t | egrep ^/dev/ | sort"
@@ -30,6 +30,7 @@ alias ip='ip -c'
 alias apt-get='sudo apt-get'
 alias apt='sudo apt'
 alias nala='sudo nala'
+alias pacman='sudo pacman'
 
 # colorize the grep command output for ease of use (good for log files)
 alias grep='grep --color=auto'
@@ -38,3 +39,9 @@ alias fgrep='fgrep --color=auto'
 
 # humanly readable mount command
 alias mount='mount | column -t'
+
+# make go-task be task
+alias task='go-task'
+
+# make codium be code
+alias code='codium'

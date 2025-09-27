@@ -1,0 +1,23 @@
+---
+# yaml-language-server: $schema=https://json.schemastore.org/pre-commit-config.json
+default_install_hook_types:
+  - pre-commit
+  - commit-msg
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+  - repo: https://github.com/ednxzu/validate-sops
+    rev: "v0.2.0"
+    hooks:
+      - id: validate-sops
+        files: '.*\.secret\.(json|ya?ml)$'
+  - repo: local
+    hooks:
+      - id: update-vscodium-extensions
+        name: Update VSCodium extensions list
+        entry: scripts/sync-vscode-extensions.sh
+        language: system
+        pass_filenames: false

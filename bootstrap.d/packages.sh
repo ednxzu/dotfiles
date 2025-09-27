@@ -50,6 +50,7 @@ EXTRTA_PACKAGES=(
   gitflow-avh
   git-delta
   signal-desktop
+  discord
 )
 
 install_pacman_packages() {

@@ -47,6 +47,9 @@ EXTRTA_PACKAGES=(
   go-task
   starship
   flameshot
+  gitflow-avh
+  git-delta
+  signal-desktop
 )
 
 install_pacman_packages() {

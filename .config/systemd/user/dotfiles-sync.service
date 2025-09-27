@@ -1,0 +1,12 @@
+[Unit]
+Description=Sync dotfiles and apply stow symlinks
+After=graphical-session.target
+
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c '[[ -x "$HOME/.config/dotfiles/dotfiles-sync.sh" ]] && "$HOME/.config/dotfiles/dotfiles-sync.sh"'
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=graphical-session.target

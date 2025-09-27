@@ -3,8 +3,17 @@
 !.config/alacritty**
 !.config/kitty**
 !.config/fontconfig**
-!.config/systemd/user/ssh-agent.service
 !.config/flameshot**
+!.config/VSCodium
+!.config/VSCodium/User
+!.config/VSCodium/User/settings.json
+!.config/VSCodium/extensions.list
+!.config/systemd
+!.config/systemd/user
+!.config/systemd/user/*.service
+!.config/dotfiles**
+!.config/openstack
+!.config/openstack/clouds.template.yaml
 
 # only track specific .ssh files
 .ssh/**

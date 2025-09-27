@@ -1,10 +1,10 @@
 [Unit]
 Description=Sync VSCodium extensions from extensions.list
-After=After=dotfiles-sync.service
+After=dotfiles-sync.service
 
 [Service]
 Type=oneshot
-ExecStart=/bin/bash -c '[[ -x "$HOME/.config/VSCodium/install-extensions.sh" ]] && "$HOME/.config/VSCodium/install-extensions.sh"'
+ExecStart=/bin/bash -c '[[ -x "$HOME/.config/dotfiles/install-extensions.sh" ]] && "$HOME/.config/dotfiles/install-extensions.sh"'
 StandardOutput=journal
 StandardError=journal
 

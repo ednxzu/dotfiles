@@ -29,6 +29,22 @@ tool = vscodium
 [mergetool "vscodium"]
 cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
 
+# requires git-delta
+[interactive]
+diffFilter = delta --color-only
+
+# requires git-delta
+[pager]
+diff = delta
+log = delta
+reflog = delta
+show = delta
+
+# requires git-delta
+[delta]
+line-numbers = true
+side-by-side = true
+
 [alias]
 lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 prune-branches = !"git remote prune ${1:-origin} && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
@@ -37,21 +53,42 @@ tags = tag -n1 --list
 stashes = stash list
 pfl = push --force-with-lease
 rcommit = commit --amend --no-edit
+co = checkout
+cob = checkout -b
+s = status -sb
+aa = !git add -A && git status -sb
+c = commit -v
+ca = commit -v -a
+cam = commit -am
+ri = rebase -i
+last = log -1 HEAD
+undo = reset --soft HEAD~1
+ss = stash save
+sp = stash pop
+makepatch = "!git --no-pager diff HEAD"
+
+
+[init]
+defaultBranch = main
+
+[push]
+default = current
+autoSetupRemote = true
 
 [includeIf "gitdir:/home/lanson/git/gitlab.devau.co/"]
-path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.devau.co
+path = /home/lanson/.gitconfig.d/.gitlab.devau.co.config
 
 [includeIf "gitdir:/home/lanson/git/gitlab.com/"]
-path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.com
+path = /home/lanson/.gitconfig.d/.gitlab.com.config
 
 [includeIf "gitdir:/home/lanson/git/gitlab.infomaniak.ch/"]
-path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.infomaniak.ch
+path = /home/lanson/.gitconfig.d/.gitlab.infomaniak.ch.config
 
 [includeIf "gitdir:/home/lanson/git/ansible_collections/infomaniak/"]
-path = /home/lanson/.gitconfig.d/.gitconfig.gitlab.infomaniak.ch
+path = /home/lanson/.gitconfig.d/.gitlab.infomaniak.ch.config
 
 [includeIf "gitdir:/home/lanson/git/salsa.debian.org/"]
-path = /home/lanson/.gitconfig.d/.gitconfig.salsa.debian.org
+path = /home/lanson/.gitconfig.d/.salsa.debian.org.config
 
 [includeIf "gitdir:/home/lanson/git/opendev.org/"]
-path = /home/lanson/.gitconfig.d/.gitconfig.opendev.org
+path = /home/lanson/.gitconfig.d/.opendev.org.config

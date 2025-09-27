@@ -1,0 +1,9 @@
+#! /bin/bash
+
+# I can't get the completion to work with alias
+# So function here we go..
+task() {
+  go-task "$@"
+}
+
+complete -F _go-task task

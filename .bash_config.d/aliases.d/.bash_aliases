@@ -41,8 +41,5 @@ alias fgrep='fgrep --color=auto'
 # humanly readable mount command
 alias mount='mount | column -t'
 
-# make go-task be task
-alias task='go-task'
-
 # make codium be code
 alias code='codium'

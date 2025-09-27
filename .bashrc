@@ -37,11 +37,6 @@ shopt -s histappend
 # make less more friendly for non-text input files
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-  debian_chroot=$(cat /etc/debian_chroot)
-fi
-
 #########################
 # Environment variables #
 #########################
@@ -63,12 +58,11 @@ export OS_CLIENT_CONFIG_FILE=$HOME/.config/openstack/clouds.yaml
 # SSH configuration #
 #####################
 
-if is_true $USE_GNUPG_FOR_SSH; then
-  export GPG_TTY="$(tty)"
-  export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-  gpgconf --launch gpg-agent
-  gpg-connect-agent updatestartuptty /bye >/dev/null
-fi
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
+gpg-connect-agent updatestartuptty /bye >/dev/null
+
 
 # ensure ssh won't break because of missing term files for kitty or alacritty
 # the real TERM value should be xterm-kitty but won't work on most machines
@@ -124,12 +118,6 @@ source_all_files "$HOME/.bash_config.d/specific.d"
 ##############
 
 export PATH="$HOME/.local/bin:$PATH"
-
-##############
-# Cargo path #
-##############
-
-# source $HOME/.cargo/env
 
 #######################
 # PyEnv configuration #

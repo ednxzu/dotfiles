@@ -26,7 +26,7 @@ if [[ ! -d "$DRACULA_ICONS_DIR" ]]; then
     echo "[ICONS] Downloading Dracula circle icons..."
     curl -L -o "$DRACULA_ICONS_ZIP" "https://github.com/m4thewz/dracula-icons/archive/refs/heads/circle.zip"
     unzip -q "$DRACULA_ICONS_ZIP" -d "$ICONS_DIR"
-    mv "$ICONS_DIR/dracula-icons-circle" "$DRACULA_ICONS_DIR"
+    mv -f "$ICONS_DIR/dracula-icons-circle" "$DRACULA_ICONS_DIR"
     rm "$DRACULA_ICONS_ZIP"
 else
     echo "[ICONS] Dracula circle icons already installed."

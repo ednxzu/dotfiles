@@ -1,0 +1,7 @@
+#! /bin/bash
+
+# I can't get the completion to work with alias
+# So function here we go..
+devpod() {
+  devpod-cli "$@"
+}

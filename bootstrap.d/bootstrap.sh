@@ -22,9 +22,6 @@ install_aur_packages
 # Install themes
 source "$DOTFILES/bootstrap.d/theme.sh"
 
-# Apply dconf settings
-source "$DOTFILES/bootstrap.d/dconf.sh"
-
 # Install fonts
 source "$DOTFILES/bootstrap.d/fonts.sh"
 

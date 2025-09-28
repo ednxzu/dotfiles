@@ -15,6 +15,10 @@
 !.config/openstack
 !.config/openstack/clouds.template.yaml
 !.config/pacman.conf
+!.config/bspwm
+!.config/bspwm/**
+!.config/sxhkd
+!.config/sxhkd/**
 
 # only track specific .ssh files
 .ssh/**

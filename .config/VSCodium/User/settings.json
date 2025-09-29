@@ -3,7 +3,7 @@
   "editor.fontSize": 13,
   "editor.tabSize": 2,
   "editor.fontFamily": "'JetBrains Mono Nerd Font', 'monospace', 'monospace'",
-  "editor.fontWeight": "550",
+  "editor.fontWeight": "600",
   "workbench.colorCustomizations": {
     "editorError.foreground": "#00000000",
     "editorError.background": "#ff555522",
@@ -141,5 +141,7 @@
   "[github-actions-workflow]": {
     "editor.defaultFormatter": "redhat.vscode-yaml"
   },
-  "remote.devpodcontainers.devpodCommand": "devpod-cli"
+  "remote.devpodcontainers.devpodCommand": "devpod-cli",
+  "explorer.confirmDragAndDrop": false,
+  "glassit.alpha": 100
 }

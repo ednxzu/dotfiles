@@ -15,22 +15,23 @@ BASE_PACKAGES=(
     firefox
     vim
     tree
-    codium
     flameshot
+    noto-fonts-emoji
+    xorg-xsetroot
+    man-db
+    networkmanager
+    networkmanager-openvpn
+    rofi
+    rofi-emoji
+    polybar
 )
 
-EXTRTA_PACKAGES=(
-  gnome-shell-extension-pop-shell-git
+EXTRA_PACKAGES=(
   netbird-bin
   netbird-bin-debug
   netbird-debug
   netbird-ui-bin
   netbird-ui-bin-debug
-  pop-icon-theme-git
-  pop-launcher-git
-  pop-launcher-git-debug
-  pop-shell-shortcuts-git
-  pop-shell-shortcuts-git-debug
   vscodium
   fluxcd
   kubectl
@@ -52,6 +53,8 @@ EXTRTA_PACKAGES=(
   signal-desktop
   discord
   devpod
+  bluetuith
+  dracula-icons-theme
 )
 
 install_pacman_packages() {
@@ -61,7 +64,7 @@ install_pacman_packages() {
 
 install_extra_packages() {
     echo "[PACKAGES] Installing AUR packages..."
-    for pkg in "${EXTRTA_PACKAGES[@]}"; do
+    for pkg in "${EXTRA_PACKAGES[@]}"; do
         if ! pacman -Qi "$pkg" &>/dev/null && ! yay -Q "$pkg" &>/dev/null; then
             echo "[AUR] Installing $pkg..."
             yay -S --needed --noconfirm "$pkg"

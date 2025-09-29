@@ -19,6 +19,15 @@
 !.config/bspwm/**
 !.config/sxhkd
 !.config/sxhkd/**
+!.config/polybar
+!.config/polybar/config.ini
+!.config/polybar/launch.sh
+!.config/polybar/scripts
+!.config/polybar/scripts/*
+!.config/polybar/modules
+!.config/polybar/modules/*
+!.config/picom
+!.config/picom/picom.conf
 
 # only track specific .ssh files
 .ssh/**

@@ -28,6 +28,8 @@
 !.config/polybar/modules/*
 !.config/picom
 !.config/picom/picom.conf
+!.config/feh
+!.config/feh/wallpaper.png
 
 # only track specific .ssh files
 .ssh/**

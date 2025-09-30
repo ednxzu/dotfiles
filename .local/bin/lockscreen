@@ -1,0 +1,19 @@
+#! /bin/sh
+
+i3lock \
+  --blur 10 \
+  --inside-color=00000000 \
+  --insidever-color=00000000 \
+  --insidewrong-color=00000000 \
+  --ring-color=50fa7bF2 \
+  --ringwrong-color=ff5555F2 \
+  --ringver-color=8be9fdF2 \
+  --line-color=282a36F2 \
+  --keyhl-color=bd93f9F2 \
+  --verif-color=8be9fdF2 \
+  --verif-text="Verifying" \
+  --verif-font="JetBrains Mono Nerd Font" \
+  --wrong-color=ff5555F2 \
+  --wrong-text="Invalid" \
+  --wrong-font="JetBrains Mono Nerd Font" \
+  --indicator

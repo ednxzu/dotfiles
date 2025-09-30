@@ -1,0 +1,32 @@
+#!/bin/sh
+
+chosen=$(printf "  1 Power Off\n  2 Restart\n  3 Suspend\n  4 Hibernate\n󰩈  5 Log Out\n  6 Lock" \
+    | rofi -dmenu -i \
+        -theme-str '@import "powermenu.rasi"' \
+        -kb-custom-1 "Alt+1" \
+        -kb-custom-2 "Alt+2" \
+        -kb-custom-3 "Alt+3" \
+        -kb-custom-4 "Alt+4" \
+        -kb-custom-5 "Alt+5" \
+        -kb-custom-6 "Alt+6")
+
+exit_code=$?
+
+case $exit_code in
+  0) # Normal selection
+    case "$chosen" in
+      "  1 Power Off") poweroff ;;
+      "  2 Restart") reboot ;;
+      "  3 Suspend") systemctl suspend-then-hibernate ;;
+      "  4 Hibernate") systemctl hibernate ;;
+      "󰩈  5 Log Out") bspc quit ;;
+      "  6 Lock") ~/.local/bin/lockscreen ;;
+    esac
+    ;;
+  10) poweroff ;;
+  11) reboot ;;
+  12) systemctl suspend-then-hibernate ;;
+  13) systemctl hibernate ;;
+  14) bspc quit ;;
+  15) ~/.local/bin/lockscreen ;;
+esac

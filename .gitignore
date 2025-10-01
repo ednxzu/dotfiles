@@ -30,10 +30,19 @@
 !.config/picom/picom.conf
 !.config/feh
 !.config/feh/wallpaper.png
+!.config/rofi
+!.config/rofi/rofi.rasi
+!.config/gtk-3.0
+!.config/gtk-3.0/settings.ini
+!.config/gtk-4.0
+!.config/gtk-4.0/settings.ini
 
 # only track specific .ssh files
 .ssh/**
-!.ssh/authorized_keys
+
+# ignore themes
+.themes/**
+!.themes/.gitkeep
 
 # ignore font uuid file
 .fonts/.uuid
@@ -48,6 +57,14 @@
 # only track specific .local files
 .local/**
 !.local/share/fonts
+!.local/bin
+!.local/bin/lockscreen
+!.local/bin/powermenu
+!.local/share
+!.local/share/icons
+!.local/share/icons/default
+!.local/share/icons/default/index.theme
+
 
 # ignore local config.sh file
 .bash_config.d/config.sh

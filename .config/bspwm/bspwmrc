@@ -1,18 +1,76 @@
-#! /bin/sh
+#!/bin/sh
 
-pgrep -x sxhkd > /dev/null || sxhkd &
+# ---------------------------
+# Helpers / Variables
+# ---------------------------
+WALLPAPER="$HOME/.config/feh/wallpaper.png"
+CURSOR="left_ptr"
+COMPOSE_KEY="ralt"
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+# Colors (dracula palette)
+NORMAL_BORDER="#44475a"
+ACTIVE_BORDER="#bd93f9"
+FOCUSED_BORDER="#ff79c6"
+PRESEL_COLOR="#6272a4"
 
+# Rules: floating windows with size
+declare -A FLOATING_RULES=(
+    [nmtui]="800x600"
+    [bluetooth]="800x600"
+    [pulseaudio]="800x600"
+)
+
+# Desktops
+DESKTOPS=(I II III IV)
+
+# ---------------------------
+# Utilities
+# ---------------------------
+# Start if not already running
+start_if_needed() {
+    pgrep -x "$1" > /dev/null || "$@" &
+}
+
+# Apply floating rules
+apply_floating_rules() {
+    for class in "${!FLOATING_RULES[@]}"; do
+        bspc rule -a "$class" state=floating rectangle="${FLOATING_RULES[$class]}"
+    done
+}
+
+# ---------------------------
+# Startup Applications
+# ---------------------------
+start_if_needed sxhkd
+start_if_needed picom
+start_if_needed feh --bg-fill "$WALLPAPER"
+"$HOME/.config/polybar/launch.sh"
+
+# ---------------------------
+# Input & Cursor
+# ---------------------------
+~/.config/bspwm/scripts/init-input.sh
+
+
+# ---------------------------
+# Monitor / Desktops
+# ---------------------------
+~/.config/bspwm/scripts/monitors.sh
+
+# ---------------------------
+# BSPWM Settings
+# ---------------------------
 bspc config border_width         2
 bspc config window_gap          12
+bspc config split_ratio         0.52
+bspc config borderless_monocle  true
+bspc config gapless_monocle     true
+bspc config normal_border_color "$NORMAL_BORDER"
+bspc config active_border_color "$ACTIVE_BORDER"
+bspc config focused_border_color "$FOCUSED_BORDER"
+bspc config presel_feedback_color "$PRESEL_COLOR"
 
-bspc config split_ratio          0.52
-bspc config borderless_monocle   true
-bspc config gapless_monocle      true
-
-bspc rule -a Gimp desktop='^8' state=floating follow=on
-bspc rule -a Chromium desktop='^2'
-bspc rule -a mplayer2 state=floating
-bspc rule -a Kupfer.py focus=on
-bspc rule -a Screenkey manage=off
+# ---------------------------
+# Floating Rules
+# ---------------------------
+apply_floating_rules

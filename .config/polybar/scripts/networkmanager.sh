@@ -9,13 +9,13 @@ network_print() {
     eth_count=$(nmcli -t -f DEVICE,STATE,TYPE connection show --active | grep -c ":activated:802-3-ethernet")
 
     if [ "$wifi_count" -gt 0 ]; then
-        wifi_out="%{F$GREEN}$WIFI_ICON ($wifi_count)%{F-}"
+        wifi_out="%{F$GREEN}$WIFI_ICON%{F-} ($wifi_count)"
     else
         wifi_out="$WIFI_ICON (0)"
     fi
 
     if [ "$eth_count" -gt 0 ]; then
-        eth_out="%{F$GREEN}$ETH_ICON ($eth_count)%{F-}"
+        eth_out="%{F$GREEN}$ETH_ICON%{F-} ($eth_count)"
     else
         eth_out="$ETH_ICON (0)"
     fi

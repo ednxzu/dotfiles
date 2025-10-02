@@ -16,6 +16,10 @@ ctrl + alt + f
 super + space
     rofi -show drun
 
+# File browser
+super + e
+    kitty -e yazi
+
 # Powermenu
 super + Escape
     ~/.local/bin/powermenu
@@ -113,12 +117,12 @@ super + {o,i}
     bspc wm -h on
 
 # Focus desktop / Move to desktop
-super + {_,shift + }{1-9,0}
-    bspc {desktop -f,node -d} '^{1-9,10}'
+super + {1-9}
+    bspc desktop -f '^{1-9}'
 
 # Move node to desktop N (and follow)
 super + shift + {1-9}
-    bspc node -d ^{1-9} --follow
+    bspc node -d '^{1-9}' --follow
 
 
 #

@@ -1,5 +1,4 @@
 #!/bin/sh
-# ~/.xinitrc
 
 # Load Xresources (if present)
 [ -f ~/.Xresources ] && xrdb -merge ~/.Xresources

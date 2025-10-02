@@ -31,7 +31,9 @@
 !.config/feh
 !.config/feh/wallpaper.png
 !.config/rofi
-!.config/rofi/rofi.rasi
+!.config/rofi/config.rasi
+!.config/rofi/monitors.rasi
+!.config/rofi/powermenu.rasi
 !.config/gtk-3.0
 !.config/gtk-3.0/settings.ini
 !.config/gtk-4.0

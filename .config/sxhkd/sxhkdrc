@@ -18,7 +18,7 @@ super + space
 
 # File browser
 super + e
-    kitty -e yazi
+    kitty --class yazi --config ~/.config/kitty/custom/yazi.conf --config ~/.config/kitty/kitty.conf -e yazi
 
 # Powermenu
 super + Escape

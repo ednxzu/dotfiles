@@ -18,6 +18,7 @@ declare -A FLOATING_RULES=(
     [nmtui]="800x600"
     [bluetooth]="800x600"
     [pulseaudio]="800x600"
+    [yazi]="1600x1200"
 )
 
 # Desktops

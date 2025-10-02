@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-set -euo pipefail
+# set -euo pipefail
 
 THEMES_DIR="$HOME/.themes"
 CONFIG_DIR="$HOME/.config"

@@ -19,7 +19,7 @@ case $exit_code in
       "  2 Restart") reboot ;;
       "  3 Suspend") systemctl suspend-then-hibernate ;;
       "  4 Hibernate") systemctl hibernate ;;
-      "󰩈  5 Log Out") bspc quit ;;
+      "󰩈  5 Log Out") loginctl kill-user $USER ;;
       "  6 Lock") ~/.local/bin/lockscreen ;;
     esac
     ;;

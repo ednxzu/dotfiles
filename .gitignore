@@ -36,6 +36,9 @@
 !.config/gtk-3.0/settings.ini
 !.config/gtk-4.0
 !.config/gtk-4.0/settings.ini
+!.config/yazi
+!.config/yazi/keymap.toml
+!.config/yazi/yazi.toml
 
 # only track specific .ssh files
 .ssh/**

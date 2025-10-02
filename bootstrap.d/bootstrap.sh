@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-DOTFILES="$HOME/.dotfiles"
-
 echo "[BOOTSTRAP] Starting..."
 
 # Install required base packages
@@ -17,13 +15,10 @@ cd $HOME
 
 # Install the rest of the packages
 install_yay
-install_aur_packages
+install_extra_packages
 
 # Install themes
 source "$DOTFILES/bootstrap.d/theme.sh"
-
-# Install fonts
-source "$DOTFILES/bootstrap.d/fonts.sh"
 
 # Enable user systemd services
 source "$DOTFILES/bootstrap.d/systemd.sh"

@@ -26,5 +26,8 @@ source "$DOTFILES/bootstrap.d/systemd.sh"
 # Add sudoer files
 source "$DOTFILES/bootstrap.d/sudoers.sh"
 
+# Create git/ directory tree
+source "$DOTFILES/bootstrap.d/git.sh"
+
 
 echo "[BOOTSTRAP] Done!"

@@ -29,6 +29,7 @@ BASE_PACKAGES=(
     jq
     unzip
     nemo
+    yazi
 )
 
 EXTRA_PACKAGES=(

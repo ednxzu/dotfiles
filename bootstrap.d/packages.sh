@@ -24,6 +24,11 @@ BASE_PACKAGES=(
     rofi
     rofi-emoji
     polybar
+    xorg-xrandr
+    jc
+    jq
+    unzip
+    nemo
 )
 
 EXTRA_PACKAGES=(
@@ -55,6 +60,7 @@ EXTRA_PACKAGES=(
   devpod
   bluetuith
   dracula-icons-theme
+  i3lock-color
 )
 
 install_pacman_packages() {

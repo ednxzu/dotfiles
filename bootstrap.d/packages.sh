@@ -33,6 +33,8 @@ BASE_PACKAGES=(
     unzip
     nemo
     yazi
+    fzf
+    xss-lock
 )
 
 EXTRA_PACKAGES=(
@@ -65,6 +67,7 @@ EXTRA_PACKAGES=(
   bluetuith
   dracula-icons-theme
   i3lock-color
+  pre-commit
 )
 
 install_pacman_packages() {
@@ -83,7 +86,6 @@ install_extra_packages() {
         fi
     done
 }
-
 
 install_yay() {
     if ! command -v yay &>/dev/null; then

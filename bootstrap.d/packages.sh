@@ -11,6 +11,9 @@ BASE_PACKAGES=(
     python-pipx
     python
     pyenv
+    feh
+    picom
+    kitty
     bash-completion
     firefox
     vim

@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
+DOTFILES=$HOME/.dotfiles
+
 echo "[BOOTSTRAP] Starting..."
 
 # Install required base packages
@@ -10,7 +12,7 @@ install_pacman_packages
 # Run first stow
 rm .bashrc .bash_logout
 cd $DOTFILES
-stow -d "$DOTFILES" -t "$HOME"
+stow -d "$DOTFILES" -t "$HOME" .
 cd $HOME
 
 # Install the rest of the packages

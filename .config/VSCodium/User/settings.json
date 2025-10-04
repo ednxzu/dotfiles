@@ -143,5 +143,5 @@
   },
   "remote.devpodcontainers.devpodCommand": "devpod-cli",
   "explorer.confirmDragAndDrop": false,
-  "glassit.alpha": 100
+  "security.promptForRemoteFileProtocolHandling": false
 }

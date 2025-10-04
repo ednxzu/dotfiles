@@ -41,6 +41,8 @@
 !.config/yazi
 !.config/yazi/keymap.toml
 !.config/yazi/yazi.toml
+!.config/dunst
+!.config/dunst/dunstrc
 
 # only track specific .ssh files
 .ssh/**
@@ -65,11 +67,13 @@
 !.local/bin
 !.local/bin/lockscreen
 !.local/bin/powermenu
+!.local/bin/backlight
+!.local/bin/volume
 !.local/share
 !.local/share/icons
 !.local/share/icons/default
 !.local/share/icons/default/index.theme
-
+!.local/share/icons/dunst
 
 # ignore local config.sh file
 .bash_config.d/config.sh

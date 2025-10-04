@@ -27,6 +27,25 @@ super + Escape
 
 #
 # ───────────────────────────────
+#   AUDIO
+# ───────────────────────────────
+#
+
+# Raise volume 5%
+XF86AudioRaiseVolume
+    ~/.local/bin/volume up
+
+# Lower volume 5%
+XF86AudioLowerVolume
+    ~/.local/bin/volume down
+
+# Mute
+XF86AudioMute
+    ~/.local/bin/volume mute
+
+
+#
+# ───────────────────────────────
 #   SYSTEM / UTILITIES
 # ───────────────────────────────
 #

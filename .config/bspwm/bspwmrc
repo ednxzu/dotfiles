@@ -51,6 +51,7 @@ xset dpms 600 900 1200  # standby/suspend/off (in seconds)
 # ---------------------------
 start_if_needed sxhkd
 start_if_needed picom
+start_if_needed dunst
 start_if_needed feh --bg-fill "$WALLPAPER"
 start_if_needed xss-lock -- ~/.local/bin/lockscreen
 "$HOME/.config/polybar/launch.sh"

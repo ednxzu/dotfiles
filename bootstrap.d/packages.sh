@@ -14,8 +14,11 @@ BASE_PACKAGES=(
     feh
     picom
     kitty
+    dunst
     bash-completion
     firefox
+    chromium
+    cyme
     vim
     tree
     flameshot

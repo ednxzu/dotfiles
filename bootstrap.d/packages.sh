@@ -42,6 +42,7 @@ BASE_PACKAGES=(
     pulsemixer
     tk
     autorandr
+    arandr
 )
 
 EXTRA_PACKAGES=(

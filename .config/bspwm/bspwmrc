@@ -4,8 +4,6 @@
 # Helpers / Variables
 # ---------------------------
 WALLPAPER="$HOME/.config/feh/wallpaper.png"
-CURSOR="left_ptr"
-COMPOSE_KEY="ralt"
 
 # Colors (dracula palette)
 NORMAL_BORDER="#44475a"
@@ -51,7 +49,6 @@ xset dpms 600 900 1200  # standby/suspend/off (in seconds)
 # ---------------------------
 start_if_needed sxhkd
 start_if_needed picom
-start_if_needed dunst
 start_if_needed feh --bg-fill "$WALLPAPER"
 start_if_needed xss-lock -- ~/.local/bin/lockscreen
 "$HOME/.config/polybar/launch.sh"
@@ -66,6 +63,11 @@ start_if_needed xss-lock -- ~/.local/bin/lockscreen
 # Monitor / Desktops
 # ---------------------------
 ~/.config/bspwm/scripts/monitors.sh
+
+# ---------------------------
+# Defaults sanitation
+# ---------------------------
+~/.config/bspwm/scripts/fix-defaults.sh
 
 # ---------------------------
 # BSPWM Settings

@@ -53,28 +53,29 @@ esac
 # ---------------------------
 # Position monitors
 # ---------------------------
+max_height=$(( primary_height > extra_height ? primary_height : extra_height ))
+
 case "$direction" in
     "← Left")
         x_offset=0
-        y_offset=$((primary_height - extra_height))
-        xrandr --output "$extra" --auto --pos "${x_offset}x${y_offset}" --left-of "$primary"
+        y_offset=$((max_height - extra_height))
         ;;
     "→ Right")
         x_offset=$((primary_width))
-        y_offset=$((primary_height - extra_height))
-        xrandr --output "$extra" --auto --pos "${x_offset}x${y_offset}" --right-of "$primary"
+        y_offset=$((max_height - extra_height))
         ;;
     "↑ Above")
         x_offset=$(( (primary_width - extra_width) / 2 ))
         y_offset=$(( -extra_height ))
-        xrandr --output "$extra" --auto --pos "${x_offset}x${y_offset}" --above "$primary"
         ;;
     "↓ Below")
         x_offset=$(( (primary_width - extra_width) / 2 ))
         y_offset=$(( primary_height ))
-        xrandr --output "$extra" --auto --pos "${x_offset}x${y_offset}" --below "$primary"
         ;;
 esac
+
+xrandr --output "$extra" --auto --pos "${x_offset}x${y_offset}" --${direction// /-} "$primary"
+
 
 # ---------------------------
 # Assign desktops

@@ -1,0 +1,26 @@
+#!/bin/sh
+# Switch both monitors together: primary I–IV, secondary V–VIII
+
+# Determine active monitors
+monitors=($(bspc query -M --names))
+primary="${monitors[0]}"
+secondary="${monitors[1]}"
+
+# No secondary monitor? Just switch normally
+if [ -z "$secondary" ]; then
+    bspc desktop -f "^$1"
+    exit 0
+fi
+
+# Map numeric workspace -> desktop pairs
+case "$1" in
+    1) primary_idx=1; secondary_idx=5 ;;
+    2) primary_idx=2; secondary_idx=6 ;;
+    3) primary_idx=3; secondary_idx=7 ;;
+    4) primary_idx=4; secondary_idx=8 ;;
+    *) exit 0 ;;
+esac
+
+# Switch both monitors simultaneously
+bspc desktop "$primary:^$primary_idx" -f
+bspc desktop "$secondary:^$secondary_idx" -f

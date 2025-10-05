@@ -42,15 +42,6 @@ xset +dpms
 xset dpms 600 900 1200  # standby/suspend/off (in seconds)
 
 # ---------------------------
-# Startup Applications
-# ---------------------------
-start_if_needed sxhkd
-start_if_needed picom
-start_if_needed feh --bg-fill "$WALLPAPER"
-start_if_needed xss-lock -- ~/.local/bin/lockscreen
-"$HOME/.config/polybar/launch.sh"
-
-# ---------------------------
 # Input & Cursor
 # ---------------------------
 ~/.config/bspwm/scripts/init-input.sh
@@ -78,6 +69,16 @@ bspc config normal_border_color "$NORMAL_BORDER"
 bspc config active_border_color "$ACTIVE_BORDER"
 bspc config focused_border_color "$FOCUSED_BORDER"
 bspc config presel_feedback_color "$PRESEL_COLOR"
+
+# ---------------------------
+# Startup Applications
+# ---------------------------
+start_if_needed sxhkd
+start_if_needed picom
+start_if_needed feh --bg-fill "$WALLPAPER"
+start_if_needed xss-lock -- ~/.local/bin/lockscreen
+"$HOME/.config/polybar/launch.sh"
+
 
 # ---------------------------
 # Floating Rules

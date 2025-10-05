@@ -69,6 +69,7 @@
 !.local/bin/powermenu
 !.local/bin/backlight
 !.local/bin/volume
+!.local/bin/switch-desktop
 !.local/share
 !.local/share/icons
 !.local/share/icons/default

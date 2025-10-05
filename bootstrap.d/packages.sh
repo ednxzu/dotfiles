@@ -40,6 +40,7 @@ BASE_PACKAGES=(
     xss-lock
     bat
     pulsemixer
+    tk
 )
 
 EXTRA_PACKAGES=(
@@ -73,6 +74,7 @@ EXTRA_PACKAGES=(
   dracula-icons-theme
   i3lock-color
   pre-commit
+  pyenv-virtualenv
 )
 
 install_pacman_packages() {

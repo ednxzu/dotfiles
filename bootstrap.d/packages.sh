@@ -38,6 +38,8 @@ BASE_PACKAGES=(
     yazi
     fzf
     xss-lock
+    bat
+    pulsemixer
 )
 
 EXTRA_PACKAGES=(

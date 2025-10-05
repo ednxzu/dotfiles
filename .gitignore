@@ -43,6 +43,8 @@
 !.config/yazi/yazi.toml
 !.config/dunst
 !.config/dunst/dunstrc
+!.config/autorandr
+!.config/autorandr/postswitch
 
 # only track specific .ssh files
 .ssh/**

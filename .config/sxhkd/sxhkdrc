@@ -137,7 +137,7 @@ super + {o,i}
 
 # Focus desktop / Move to desktop
 super + {1-9}
-   bspc desktop -f '^{1-9}'
+  bspc desktop -f '^{1-9}'
 
 # Move node to desktop N (and follow)
 super + shift + {1-9}

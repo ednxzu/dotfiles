@@ -72,6 +72,7 @@
 !.local/bin/backlight
 !.local/bin/volume
 !.local/bin/switch-desktop
+!.local/bin/quick-update
 !.local/share
 !.local/share/icons
 !.local/share/icons/default

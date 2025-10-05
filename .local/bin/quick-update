@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+DOTFILES_DIR="$HOME/.dotfiles"
+BOOTSTRAP_SCRIPT="$DOTFILES_DIR/bootstrap.d/packages.sh"
+
+if [[ ! -f "$BOOTSTRAP_SCRIPT" ]]; then
+    echo "[ERROR] Bootstrap script not found at $BOOTSTRAP_SCRIPT"
+    exit 1
+fi
+
+
+source "$BOOTSTRAP_SCRIPT"
+
+echo "[UPDATE] Ensuring yay is installed..."
+install_yay
+
+echo "[UPDATE] Syncing package databases..."
+sudo pacman -Sy
+
+echo "[UPDATE] Installing/updating base packages..."
+install_pacman_packages
+
+echo "[UPDATE] Installing/updating AUR/extra packages..."
+install_extra_packages
+
+echo "[UPDATE] Cleaning up orphaned packages..."
+yay -Yc --noconfirm || true
+
+echo "[DONE] All packages are now up to date 🎉"

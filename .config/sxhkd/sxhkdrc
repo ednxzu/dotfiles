@@ -136,10 +136,8 @@ super + {o,i}
     bspc wm -h on
 
 # Focus desktop / Move to desktop
-# super + {1-9}
-#    bspc desktop -f '^{1-9}'
-super + {1,2,3,4}
-    ~/.local/bin/switch-desktop {1,2,3,4}
+super + {1-9}
+   bspc desktop -f '^{1-9}'
 
 # Move node to desktop N (and follow)
 super + shift + {1-9}

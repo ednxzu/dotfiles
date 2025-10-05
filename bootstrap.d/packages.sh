@@ -41,6 +41,7 @@ BASE_PACKAGES=(
     bat
     pulsemixer
     tk
+    autorandr
 )
 
 EXTRA_PACKAGES=(

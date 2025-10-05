@@ -19,9 +19,6 @@ declare -A FLOATING_RULES=(
     [yazi]="1600x1200"
 )
 
-# Desktops
-DESKTOPS=(I II III IV)
-
 # ---------------------------
 # Utilities
 # ---------------------------

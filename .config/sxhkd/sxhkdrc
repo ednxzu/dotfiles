@@ -62,6 +62,9 @@ super + shift + Escape
 super + alt + {q,r}
     bspc {quit,wm -r}
 
+alt + m
+    ~/.local/bin/autorandr-rofi
+
 
 #
 # ───────────────────────────────

@@ -24,6 +24,7 @@ done
 if [ -n "$SECONDARY" ]; then
     bspc monitor "$PRIMARY" -d I II III IV
     bspc monitor "$SECONDARY" -d V VI VII VIII
+    bspc wm --reorder-monitors "$PRIMARY" "$SECONDARY"
 else
     bspc monitor "$PRIMARY" -d I II III IV V VI VII VIII
 fi

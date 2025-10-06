@@ -1,0 +1,18 @@
+#!/bin/sh
+
+# Get list of autorandr profiles
+PROFILES=$(autorandr --list | awk '{print $1}')
+
+# Let the user pick one via rofi
+CHOSEN=$(printf '%s\n' "$PROFILES" | rofi -dmenu -p "Select display profile:")
+
+# Exit if cancelled
+[ -z "$CHOSEN" ] && exit 0
+
+# Apply the selected profile
+autorandr --load "$CHOSEN"
+
+# Optionally notify
+if command -v notify-send >/dev/null 2>&1; then
+    notify-send "Display profile switched" "$CHOSEN"
+fi

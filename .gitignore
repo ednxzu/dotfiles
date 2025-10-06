@@ -71,7 +71,7 @@
 !.local/bin/powermenu
 !.local/bin/backlight
 !.local/bin/volume
-!.local/bin/switch-desktop
+!.local/bin/autorandr-rofi
 !.local/bin/quick-update
 !.local/share
 !.local/share/icons

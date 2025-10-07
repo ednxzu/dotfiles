@@ -43,6 +43,8 @@ BASE_PACKAGES=(
     tk
     autorandr
     arandr
+    tcpdump
+    7zip
 )
 
 EXTRA_PACKAGES=(

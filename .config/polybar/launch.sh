@@ -10,7 +10,13 @@ if [ -z "$PRIMARY" ]; then
     PRIMARY="${MONITORS[0]}"
 fi
 
-MONITOR="$PRIMARY" polybar main &
+if ls /sys/class/power_supply | grep -q '^BAT'; then
+    BAR_MAIN="main-battery"
+else
+    BAR_MAIN="main"
+fi
+
+MONITOR="$PRIMARY" polybar "$BAR_MAIN" &
 
 for mon in "${MONITORS[@]}"; do
     [ "$mon" != "$PRIMARY" ] && MONITOR="$mon" polybar secondary &

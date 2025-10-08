@@ -15,7 +15,7 @@ bluetooth_print() {
         return
     fi
 
-    connected_devices=$(bluetoothctl info | grep -c "Connected: yes")
+    connected_devices=$(bluetoothctl devices Connected | wc -l)
 
     if [ "$connected_devices" -gt 0 ]; then
         echo "%{F$BLUE}$BT_ICON%{F-} ($connected_devices)"

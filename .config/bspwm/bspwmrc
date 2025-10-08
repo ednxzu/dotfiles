@@ -55,7 +55,7 @@ xset dpms 600 900 1200  # standby/suspend/off (in seconds)
 # ---------------------------
 # Defaults sanitation
 # ---------------------------
-~/.config/bspwm/scripts/fix-defaults.sh
+~/.config/bspwm/scripts/defaults.sh
 
 # ---------------------------
 # BSPWM Settings

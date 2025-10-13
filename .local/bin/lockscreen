@@ -4,6 +4,11 @@ i3lock \
   --blur 10 \
   --radius 200 \
   --ring-width 11 \
+  --clock \
+  --time-font="JetBrains Mono Nerd Font" \
+  --date-font="JetBrains Mono Nerd Font" \
+  --time-color=50fa7bF2 \
+  --date-color=bd93f9F2 \
   --inside-color=00000000 \
   --insidever-color=00000000 \
   --insidewrong-color=00000000 \
@@ -12,6 +17,7 @@ i3lock \
   --ringver-color=8be9fdF2 \
   --line-color=282a36F2 \
   --keyhl-color=bd93f9F2 \
+  --bshl-color=ff5555F2 \
   --verif-color=8be9fdF2 \
   --verif-text="Verifying" \
   --verif-font="JetBrains Mono Nerd Font" \

@@ -2,6 +2,8 @@
 
 i3lock \
   --blur 10 \
+  --radius 200 \
+  --ring-width 11 \
   --inside-color=00000000 \
   --insidever-color=00000000 \
   --insidewrong-color=00000000 \

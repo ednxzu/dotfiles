@@ -31,14 +31,4 @@ network_print() {
     echo "$wifi_out  $eth_out${vpn_out:+  $vpn_out}"
 }
 
-trap exit INT
-
-while true; do
-    network_print
-
-    timeout 60s nmcli monitor | while read -r _; do
-        network_print
-    done &
-
-    wait
-done
+network_print

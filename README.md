@@ -1,55 +1,113 @@
-# Dotfiles Management with GNU Stow
+# 🧰 Dotfiles Management with GNU Stow
 
-This repository is structured so that all dotfiles and config directories are at the top level. You can use [GNU Stow](https://www.gnu.org/software/stow/) to symlink everything in one step.
+<div align="center">
 
-## Quick Start
+![Arch Linux Badge](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=fff&style=for-the-badge)
+![GNU Bash Badge](https://img.shields.io/badge/GNU%20Bash-4EAA25?logo=gnubash&logoColor=fff&style=for-the-badge)
 
-### 1. Install GNU Stow
+</div>
 
-Debian/Ubuntu:
+<div align="center">
+
+![bspwm Badge](https://img.shields.io/badge/bspwm-2E2E2E?logo=bspwm&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
+![Git Badge](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
+![VSCodium Badge](https://img.shields.io/badge/VSCodium-2F80ED?logo=vscodium&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
+![Docker Badge](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
+![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
+
+</div>
+
+This repository contains my personal configuration files (“dotfiles”) for Arch Linux, managed using [**GNU Stow**](https://www.gnu.org/software/stow/).
+
+The repository is structured just like your `$HOME` would be, making it easier to simply stow everything into place, and keep it synced.
+
+## 🚀 Quick Start
+
+### 1. Install Arch Linux
+
+I use **archinstall** with the default **Desktop / bspwm** profile. I also enable bluetooth and the audio server (pipewire) through **archinstall**.
+
+Once installation is complete:
+
 ```bash
-sudo apt update
-sudo apt install stow
+reboot
 ```
 
-### 2. Clone Your Dotfiles Repo
+> **Note:** A reboot is required — you need a running systemd environment for the bootstrap process to work (it won’t run correctly in the chroot).
+
+### 2. Run the bootstrap script
+
+Install `git`:
 
 ```bash
-git clone <your-dotfiles-repo-url> ~/.dotfiles
+sudo pacman -S git
+```
+
+Clone this repository:
+
+```bash
+git clone https://github.com/ednxzu/dotfiles.git ~/.dotfiles
+```
+
+Run the bootstrap script:
+
+```bash
+bash ~/.dotfiles/bootstrap.d/bootstrap.sh
+```
+
+This will:
+
+* Install required packages
+* Set up symlinks using GNU Stow
+* Configure system and user settings
+
+The process takes around **20 minutes**. Once it finishes, reboot:
+
+```bash
+reboot
+```
+
+### 3. Configure machine-specific settings
+
+After the bootstrap completes, copy the base configuration file:
+
+```bash
+cp ~/.dotfiles/config.sh ~/.bash_config.d/config.sh
+```
+
+Then edit `~/.bash_config.d/config.sh` to set any **machine-specific variables**, or environment overrides.
+
+## 🧩 Repository Structure
+
+Each top-level directory corresponds to a stow package. For example:
+
+```
+.gitconfig
+.bashrc
+.config/
+    bspwm/
+    sxhkd/
+    polybar/
+    dunst/
+```
+
+To stow a specific package manually (for example, only `.config`):
+
+```bash
 cd ~/.dotfiles
+stow .config
 ```
 
-### 3. Stow Everything
+To unstow it:
 
-Run in the repo root to symlink all dotfiles and config folders into your home directory:
 ```bash
-stow .
+stow -D .config
 ```
 
-- This links all files/folders from `.dotfiles` into your `$HOME`.
-- Your `.stow-local-ignore` is used to skip files/folders you don't want stowed.
+## 🪄 Notes
 
-### 4. Unstow All Links
-
-To remove all stowed symlinks:
-```bash
-stow -D .
-```
-
-### 5. Tips
-
-- You can selectively stow only specific files or directories by running, e.g., `stow .bash_config.d` or `stow .config`.
-- Make sure to review `.stow-local-ignore` to ensure it’s excluding what you want.
-
-## Typical Folder Structure
-
-```
-.dotfiles/
-├── .bash_config.d/
-├── .bashrc
-├── .config/
-├── .gitconfig
-├── .fonts/
-├── .venvs/
-└── bootstrap.d/
-```
+* The bootstrap script assumes **Arch Linux** as a base system.
+* Most configuration files are written with **bspwm**, **polybar**, and **rofi** in mind.
+* You can adapt this repo to your own setup by removing or modifying directories before running the bootstrap.
+* Machine-specific settings go in `~/.bash_config.d/config.sh` (not versioned in Git).
+* This setup assumes you're using `autorandr` for managing display configuration (see `sxhkdrc`).

@@ -29,6 +29,7 @@ BASE_PACKAGES=(
     networkmanager-openvpn
     rofi
     rofi-emoji
+    ttf-sarasa-gothic
     polybar
     xorg-xrandr
     jc

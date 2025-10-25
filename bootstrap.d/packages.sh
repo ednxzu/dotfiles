@@ -46,6 +46,7 @@ BASE_PACKAGES=(
     arandr
     tcpdump
     7zip
+    tea
 )
 
 EXTRA_PACKAGES=(

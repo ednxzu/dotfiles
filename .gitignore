@@ -73,6 +73,8 @@
 !.local/bin/volume
 !.local/bin/autorandr-rofi
 !.local/bin/quick-update
+!.local/bin/git-tea-review
+!.local/bin/env
 !.local/share
 !.local/share/icons
 !.local/share/icons/default

@@ -117,7 +117,7 @@ source_all_files "$HOME/.bash_config.d/specific.d"
 # Local path #
 ##############
 
-export PATH="$HOME/.local/bin:$PATH"
+source "$HOME/.local/bin/env"
 
 #######################
 # PyEnv configuration #

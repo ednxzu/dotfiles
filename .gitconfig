@@ -45,6 +45,10 @@ show = delta
 line-numbers = true
 side-by-side = true
 
+# for git-tea-review
+[tea-review]
+style = emoji
+
 [alias]
 lg = log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(bold yellow)%d%C(reset)' --all
 prune-branches = !"git remote prune ${1:-origin} && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D"
@@ -66,7 +70,6 @@ undo = reset --soft HEAD~1
 ss = stash save
 sp = stash pop
 makepatch = "!git --no-pager diff HEAD"
-
 
 [init]
 defaultBranch = main

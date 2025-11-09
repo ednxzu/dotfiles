@@ -47,6 +47,7 @@ BASE_PACKAGES=(
     tcpdump
     7zip
     tea
+    whois
 )
 
 EXTRA_PACKAGES=(

@@ -51,6 +51,9 @@ export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
   --color=info:#af87ff,prompt:#5fff87,pointer:#ff87d7,marker:#ff87d7,spinner:#ff87d7
   --color=border:#5fff87'
 
+# force vim as editor cause we don't install vi
+export EDITOR=vim
+
 # set openstack clouds.yaml very explicit
 export OS_CLIENT_CONFIG_FILE=$HOME/.config/openstack/clouds.yaml
 

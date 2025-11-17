@@ -45,5 +45,4 @@ alias mount='mount | column -t'
 alias code='codium'
 
 # gitlab-ci-local but shorter
-# and use podman also
-alias gcl='gitlab-ci-local --container-executable podman'
+alias gcl='gitlab-ci-local'

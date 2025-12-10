@@ -19,8 +19,8 @@
   "[python]": {
     "editor.tabSize": 4,
     "editor.indentSize": "tabSize",
-    "editor.defaultFormatter": "ms-python.black-formatter",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "charliermarsh.ruff",
+    "editor.formatOnSave": false
   },
   "[hcl]": {
     "editor.tabSize": 2,
@@ -62,7 +62,7 @@
   },
   "[ansible]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": false
   },
   "[markdown]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
@@ -144,5 +144,7 @@
   },
   "remote.devpodcontainers.devpodCommand": "devpod-cli",
   "explorer.confirmDragAndDrop": false,
-  "security.promptForRemoteFileProtocolHandling": false
+  "security.promptForRemoteFileProtocolHandling": false,
+  "black-formatter.args": ["--line-length", "80"],
+  "claudeCode.preferredLocation": "panel"
 }

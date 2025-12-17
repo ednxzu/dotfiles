@@ -46,7 +46,6 @@ BASE_PACKAGES=(
     arandr
     tcpdump
     7zip
-    tea
     whois
     reflector
 )
@@ -83,6 +82,7 @@ EXTRA_PACKAGES=(
   i3lock-color
   pre-commit
   pyenv-virtualenv
+  tea
 )
 
 install_pacman_packages() {
@@ -101,6 +101,12 @@ install_extra_packages() {
         fi
     done
 }
+
+get_mirror_list() {
+  echo "[PACKAGES] Getting fastest mirrors..."
+  sudo reflector --country CH --protocol https --latest 20 --sort rate --save /etc/pacman.d/mirrorlist
+}
+
 
 install_yay() {
     if ! command -v yay &>/dev/null; then

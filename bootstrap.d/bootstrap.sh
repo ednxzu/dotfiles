@@ -8,6 +8,7 @@ echo "[BOOTSTRAP] Starting..."
 # Install required base packages
 source "$DOTFILES/bootstrap.d/packages.sh"
 install_pacman_packages
+get_mirror_list
 
 # Run first stow
 rm .bashrc .bash_logout

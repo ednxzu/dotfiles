@@ -2,8 +2,8 @@
 
 i3lock \
   --blur 10 \
-  --radius 200 \
-  --ring-width 11 \
+  --radius 100 \
+  --ring-width 7 \
   --clock \
   --time-font="JetBrains Mono Nerd Font" \
   --date-font="JetBrains Mono Nerd Font" \

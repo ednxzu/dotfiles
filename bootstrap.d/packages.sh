@@ -48,6 +48,7 @@ BASE_PACKAGES=(
     7zip
     tea
     whois
+    reflector
 )
 
 EXTRA_PACKAGES=(

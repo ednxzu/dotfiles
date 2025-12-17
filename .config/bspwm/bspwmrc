@@ -3,7 +3,7 @@
 # ---------------------------
 # Helpers / Variables
 # ---------------------------
-WALLPAPER="$HOME/.config/feh/wallpaper.png"
+WALLPAPER="$HOME/.config/feh/waves.png"
 
 # Colors (dracula palette)
 NORMAL_BORDER="#44475a"

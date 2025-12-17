@@ -29,7 +29,8 @@
 !.config/picom
 !.config/picom/picom.conf
 !.config/feh
-!.config/feh/wallpaper.png
+!.config/feh/waves.png
+!.config/feh/tree.png
 !.config/rofi
 !.config/rofi/config.rasi
 !.config/rofi/monitors.rasi

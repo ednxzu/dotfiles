@@ -1,5 +1,2 @@
 #!/bin/bash
-
-~/.config/bspwm/scripts/monitors.sh
-
-~/.config/polybar/launch.sh
+bspc wm -r

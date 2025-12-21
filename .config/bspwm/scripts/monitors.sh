@@ -2,8 +2,8 @@
 
 PREFERRED_PRIMARY="eDP-1"
 
-# Detect all connected monitors
-CONNECTED=($(xrandr --query | awk '/ connected/ {print $1}'))
+# Detect all active monitors (connected AND enabled with a resolution)
+CONNECTED=($(xrandr --query | jc --xrandr | jq -r '.screens[].devices[] | select(.is_connected == true and .resolution_width != null) | .device_name'))
 
 # Determine primary
 if printf '%s\n' "${CONNECTED[@]}" | grep -qx "$PREFERRED_PRIMARY"; then

@@ -19,6 +19,25 @@ for mon in "${CONNECTED[@]}"; do
 done
 
 # ---------------------------
+# Migrate desktops from removed monitors
+# ---------------------------
+# Get list of monitors currently known to bspwm
+BSPWM_MONITORS=($(bspc query -M --names))
+
+# For each monitor bspwm knows about
+for bspwm_mon in "${BSPWM_MONITORS[@]}"; do
+    # Check if this monitor is still connected
+    if ! printf '%s\n' "${CONNECTED[@]}" | grep -qx "$bspwm_mon"; then
+        # Monitor is disconnected, move all its desktops to primary
+        for desktop in $(bspc query -D -m "$bspwm_mon"); do
+            bspc desktop "$desktop" --to-monitor "$PRIMARY"
+        done
+        # Remove the monitor from bspwm
+        bspc monitor "$bspwm_mon" -r
+    fi
+done
+
+# ---------------------------
 # Configure monitors
 # ---------------------------
 if [ -n "$SECONDARY" ]; then

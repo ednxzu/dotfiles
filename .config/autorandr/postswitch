@@ -1,3 +1,5 @@
-#! /bin/bash
+#!/bin/bash
 
-bspc wm -r
+~/.config/bspwm/scripts/monitors.sh
+
+~/.config/polybar/launch.sh

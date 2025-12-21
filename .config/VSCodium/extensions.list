@@ -1,6 +1,7 @@
 3timeslazy.vscodium-devpodcontainers
 4ops.terraform
 aaron-bond.better-comments
+astral-sh.ty
 bierner.markdown-mermaid
 bpruitt-goddard.mermaid-markdown-syntax-highlighting
 charliermarsh.ruff
@@ -26,6 +27,7 @@ oderwat.indent-rainbow
 redhat.ansible
 redhat.vscode-yaml
 samuelcolvin.jinjahtml
+sanderronde.vscode--gerrit
 shardulm94.trailing-spaces
 signageos.signageos-vscode-sops
 tamasfe.even-better-toml

@@ -38,7 +38,6 @@ BASE_PACKAGES=(
     nemo
     yazi
     fzf
-    xss-lock
     bat
     pulsemixer
     tk
@@ -82,7 +81,7 @@ EXTRA_PACKAGES=(
   i3lock-color
   pre-commit
   pyenv-virtualenv
-  tea
+  xidlehook
 )
 
 install_pacman_packages() {

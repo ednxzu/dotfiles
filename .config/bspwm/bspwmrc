@@ -37,9 +37,9 @@ apply_floating_rules() {
 # ---------------------------
 # Screen Locking
 # ---------------------------
-xset s 300 300
+xset s off  # Disable X11 screensaver (xidlehook handles idle detection)
 xset +dpms
-xset dpms 600 900 1200  # standby/suspend/off (in seconds)
+xset dpms 660 900 1200  # standby/suspend/off (in seconds, after 11/15/20 min)
 
 # ---------------------------
 # Input & Cursor
@@ -77,7 +77,12 @@ bspc config focus_follows_pointer true
 start_if_needed sxhkd
 start_if_needed picom
 start_if_needed feh --bg-fill "$WALLPAPER"
-start_if_needed xss-lock -- ~/.local/bin/lockscreen
+start_if_needed xidlehook \
+    --not-when-fullscreen \
+    --not-when-audio \
+    --timer 600 \
+        ~/.local/bin/lockscreen \
+        ''
 "$HOME/.config/polybar/launch.sh"
 
 

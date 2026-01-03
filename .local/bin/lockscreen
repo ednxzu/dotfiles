@@ -1,5 +1,7 @@
 #! /bin/sh
 
+pgrep -x i3lock > /dev/null && exit 0
+
 i3lock \
   --blur 10 \
   --radius 100 \

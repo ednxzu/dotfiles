@@ -122,14 +122,6 @@ source_all_files "$HOME/.bash_config.d/specific.d"
 
 source "$HOME/.local/bin/env"
 
-#######################
-# PyEnv configuration #
-#######################
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init - bash)"
-
 ###############
 # Final stage #
 ###############

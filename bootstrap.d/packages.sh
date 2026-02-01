@@ -10,7 +10,6 @@ BASE_PACKAGES=(
     python-yaml
     python-pipx
     python
-    pyenv
     feh
     picom
     kitty
@@ -38,6 +37,8 @@ BASE_PACKAGES=(
     nemo
     yazi
     fzf
+    fd
+    ripgrep
     bat
     pulsemixer
     tk
@@ -71,7 +72,6 @@ EXTRA_PACKAGES=(
   go-task
   starship
   flameshot
-  gitflow-avh
   git-delta
   signal-desktop
   discord
@@ -80,7 +80,6 @@ EXTRA_PACKAGES=(
   dracula-icons-theme
   i3lock-color
   pre-commit
-  pyenv-virtualenv
   xidlehook
 )
 

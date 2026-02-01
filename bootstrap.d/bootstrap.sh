@@ -29,6 +29,10 @@ source "$DOTFILES/bootstrap.d/systemd.sh"
 # Add sudoer files
 source "$DOTFILES/bootstrap.d/sudoers.sh"
 
+# Install uv tools (python CLIs)
+source "$DOTFILES/bootstrap.d/uv-tools.sh"
+install_uv_tools
+
 # Create git/ directory tree
 source "$DOTFILES/bootstrap.d/git.sh"
 

@@ -146,5 +146,16 @@
   "explorer.confirmDragAndDrop": false,
   "security.promptForRemoteFileProtocolHandling": false,
   "black-formatter.args": ["--line-length", "80"],
-  "claudeCode.preferredLocation": "panel"
+  "claudeCode.preferredLocation": "panel",
+  "vim.leader": "<space>",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "a"],
+      "commands": ["workbench.files.action.focusFilesExplorer"]
+    },
+    {
+      "before": ["<leader>", "e"],
+      "commands": ["workbench.action.focusActiveEditorGroup"]
+    }
+  ]
 }

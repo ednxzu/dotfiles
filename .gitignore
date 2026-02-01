@@ -46,6 +46,10 @@
 !.config/dunst/dunstrc
 !.config/autorandr
 !.config/autorandr/postswitch
+!.config/nvim
+!.config/nvim/**
+!.config/lazygit
+!.config/lazygit/**
 
 # only track specific .ssh files
 .ssh/**

@@ -32,6 +32,9 @@ cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
 [nearit "gitlab.gitlab.infomaniak.ch"]
 token = env(GITLAB_TOKEN)
 
+[nearit "gitlab.gitlab.ednz.fr"]
+token = env(GITLAB_EDNZ_TOKEN)
+
 [nearit "gitea.git.ednz.fr"]
 token = env(GITEA_TOKEN)
 

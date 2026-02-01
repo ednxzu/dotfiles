@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # ---------------------------
 # Helpers / Variables
@@ -13,10 +13,10 @@ PRESEL_COLOR="#6272a4"
 
 # Rules: floating windows with size
 declare -A FLOATING_RULES=(
-    [nmtui]="800x600"
-    [bluetooth]="800x600"
-    [pulseaudio]="800x600"
-    [yazi]="1600x1200"
+    [nmtui]="1200x900+0+0"
+    [bluetooth]="1200x900+0+0"
+    [pulseaudio]="1200x900+0+0"
+    [yazi]="1600x1200+0+0"
 )
 
 # ---------------------------
@@ -30,7 +30,7 @@ start_if_needed() {
 # Apply floating rules
 apply_floating_rules() {
     for class in "${!FLOATING_RULES[@]}"; do
-        bspc rule -a "$class" state=floating rectangle="${FLOATING_RULES[$class]}"
+        bspc rule -a "$class" state=floating center=true rectangle="${FLOATING_RULES[$class]}"
     done
 }
 

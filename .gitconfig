@@ -13,21 +13,21 @@ format = ssh
 gpgsign = true
 
 [core]
-editor = codium --wait
+editor = nvim
 ignorecase = false
 excludesFile = ~/.gitignore
 
 [diff]
-tool = vscodium
+tool = nvimdiff
 
-[difftool "vscodium"]
-cmd = codium --wait --diff $LOCAL $REMOTE
+[difftool "nvimdiff"]
+cmd = nvim -d $LOCAL $REMOTE
 
 [merge]
-tool = vscodium
+tool = nvimdiff
 
-[mergetool "vscodium"]
-cmd = codium --wait --merge $REMOTE $LOCAL $BASE $MERGED
+[mergetool "nvimdiff"]
+cmd = nvim -d $LOCAL $REMOTE $BASE $MERGED -c 'wincmd J | wincmd ='
 
 [nearit "gitlab.gitlab.infomaniak.ch"]
 token = env(GITLAB_TOKEN)

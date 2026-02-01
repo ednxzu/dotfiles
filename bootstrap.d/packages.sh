@@ -48,6 +48,9 @@ BASE_PACKAGES=(
     7zip
     whois
     reflector
+    npm
+    inotify-tools
+    xclip
 )
 
 EXTRA_PACKAGES=(

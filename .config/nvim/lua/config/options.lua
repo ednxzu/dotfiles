@@ -6,3 +6,4 @@ vim.g.snacks_animate = false
 vim.opt.list = true
 vim.opt.listchars:append({ trail = "·" })
 vim.opt.fixeol = true
+vim.opt.clipboard = "unnamedplus"

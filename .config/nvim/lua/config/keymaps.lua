@@ -2,12 +2,8 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 vim.keymap.set("n", "<leader>e", function()
-  if vim.bo.filetype == "neo-tree" then
-    vim.cmd.wincmd("p")
-  else
-    require("neo-tree.command").execute({ action = "focus" })
-  end
-end, { desc = "Toggle Explorer Focus" })
+  Snacks.explorer()
+end, { desc = "Toggle Explorer" })
 
 -- Make :q, :bd, :x, :wq close the buffer instead of the window
 vim.api.nvim_create_user_command("Bd", function()

@@ -20,10 +20,7 @@ return {
           WinSeparator = { fg = "#bd93f9" },
           CursorLine = { bg = "#2c2e3b" },
           Whitespace = { fg = "#ff5555" },
-          NeoTreeNormal = { bg = "NONE" },
-          NeoTreeNormalNC = { bg = "NONE" },
-          NeoTreeEndOfBuffer = { bg = "NONE" },
-          NeoTreeCursorLine = { bg = colors.selection },
+          SnacksPickerPathHidden = { link = "SnacksPickerFile" },
         }
       end,
     },

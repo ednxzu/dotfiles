@@ -67,6 +67,7 @@ EXTRA_PACKAGES=(
   helm
   docker
   python-poetry
+  python-tox
   uv
   consul
   nomad

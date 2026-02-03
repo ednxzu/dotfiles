@@ -14,10 +14,3 @@ repos:
     hooks:
       - id: validate-sops
         files: '.*\.secret\.(json|ya?ml)$'
-  - repo: local
-    hooks:
-      - id: update-vscodium-extensions
-        name: Update VSCodium extensions list
-        entry: scripts/sync-vscode-extensions.sh
-        language: system
-        pass_filenames: false

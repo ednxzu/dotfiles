@@ -6,8 +6,21 @@ vim.keymap.set("n", "<leader>e", function()
 end, { desc = "Toggle Explorer" })
 
 -- Make :q, :bd, :x, :wq close the buffer instead of the window
+-- Only when multiple buffers are open; otherwise fall back to normal behavior
+-- so that git integration and single-file editing work as expected
 vim.api.nvim_create_user_command("Bd", function()
-  Snacks.bufdelete()
+  local listed_bufs = vim.fn.getbufinfo({ buflisted = 1 })
+  local non_floating_wins = 0
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    if vim.api.nvim_win_get_config(win).relative == "" then
+      non_floating_wins = non_floating_wins + 1
+    end
+  end
+  if #listed_bufs > 1 or non_floating_wins > 1 then
+    Snacks.bufdelete()
+  else
+    vim.cmd("q")
+  end
 end, { desc = "Smart buffer delete" })
 
 vim.cmd([[cnoreabbrev <expr> q getcmdtype() == ":" && getcmdline() == "q" ? "Bd" : "q"]])

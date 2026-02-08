@@ -54,11 +54,6 @@ BASE_PACKAGES=(
 )
 
 EXTRA_PACKAGES=(
-  netbird-bin
-  netbird-bin-debug
-  netbird-debug
-  netbird-ui-bin
-  netbird-ui-bin-debug
   fluxcd
   kubectl
   kubelogin
@@ -84,6 +79,7 @@ EXTRA_PACKAGES=(
   i3lock-color
   pre-commit
   xidlehook
+  tofu-ls-bin
 )
 
 install_pacman_packages() {

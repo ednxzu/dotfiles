@@ -28,7 +28,8 @@ BASE_PACKAGES=(
   networkmanager-openvpn
   rofi
   rofi-emoji
-  ttf-sarasa-gothic
+  inter-font
+  ttf-ibm-plex
   polybar
   xorg-xrandr
   jc
@@ -51,6 +52,7 @@ BASE_PACKAGES=(
   npm
   inotify-tools
   xclip
+  rustup
 )
 
 EXTRA_PACKAGES=(

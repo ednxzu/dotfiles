@@ -15,7 +15,10 @@ bluetooth_print() {
         return
     fi
 
-    connected_devices=$(bluetoothctl devices Connected | wc -l)
+    # bluez 5.86 broke non-interactive `bluetoothctl devices Connected` — it races
+    # with adapter init and returns nothing. Piping forces it to wait for the session,
+    # sed strips ANSI codes so grep can match cleanly.
+    connected_devices=$(printf "devices Connected\n" | bluetoothctl 2>/dev/null | sed $'s/\033\\[[0-9;]*[mK]//g' | grep -c "^Device " || true)
 
     if [ "$connected_devices" -gt 0 ]; then
         echo "%{F$BLUE}$BT_ICON%{F-} ($connected_devices)"

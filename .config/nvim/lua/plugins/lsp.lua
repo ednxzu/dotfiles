@@ -12,6 +12,9 @@ return {
             },
           },
         },
+        jinja_lsp = {
+          filetypes = { "jinja", "jinja2", "htmljinja" },
+        },
         tofu_ls = {
           mason = false,
           cmd = { "tofu-ls", "serve" },
@@ -26,7 +29,7 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     opts = {
-      ensure_installed = { "terraform", "hcl" },
+      ensure_installed = { "terraform", "hcl", "jinja" },
     },
   },
   {

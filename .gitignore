@@ -2,7 +2,9 @@
 .config/**
 !.config/alacritty**
 !.config/kitty**
-!.config/fontconfig**
+!.config/fontconfig
+!.config/fontconfig/conf.d
+!.config/fontconfig/conf.d/*
 !.config/flameshot**
 !.config/VSCodium
 !.config/VSCodium/User

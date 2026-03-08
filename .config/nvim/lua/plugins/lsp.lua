@@ -36,15 +36,11 @@ return {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
-        terraform = { "tofu_fmt" },
-        ["terraform-vars"] = { "tofu_fmt" },
+        terraform = { "terraform_fmt" },
+        ["terraform-vars"] = { "terraform_fmt" },
       },
       formatters = {
-        tofu_fmt = {
-          command = "tofu",
-          args = { "fmt", "-" },
-          stdin = true,
-        },
+        terraform_fmt = { command = "tofu" },
       },
     },
   },

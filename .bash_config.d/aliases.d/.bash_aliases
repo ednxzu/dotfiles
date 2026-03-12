@@ -43,6 +43,3 @@ alias mount='mount | column -t'
 
 # make codium be code
 alias code='codium'
-
-# gitlab-ci-local but shorter
-alias gcl='gitlab-ci-local'

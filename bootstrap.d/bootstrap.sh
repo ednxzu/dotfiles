@@ -36,5 +36,4 @@ install_uv_tools
 # Create git/ directory tree
 source "$DOTFILES/bootstrap.d/git.sh"
 
-
 echo "[BOOTSTRAP] Done!"

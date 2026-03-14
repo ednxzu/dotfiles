@@ -38,6 +38,9 @@ token = env(GITLAB_EDNZ_TOKEN)
 [nearit "gitea.git.ednz.fr"]
 token = env(GITEA_TOKEN)
 
+[nearit "gitea.git.la-banquise.fr"]
+token = env(GITEA_BANQUISE_TOKEN)
+
 # requires git-delta
 [interactive]
 diffFilter = delta --color-only
@@ -100,3 +103,6 @@ path = /home/lanson/.gitconfig.d/.salsa.debian.org.config
 
 [includeIf "gitdir:/home/lanson/git/opendev.org/"]
 path = /home/lanson/.gitconfig.d/.opendev.org.config
+
+[includeIf "gitdir:/home/lanson/git/git.la-banquise.fr/"]
+path = /home/lanson/.gitconfig.d/.git.la-banquise.fr.config

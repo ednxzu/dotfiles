@@ -33,11 +33,19 @@ return {
     },
   },
   {
+    "mason-org/mason.nvim",
+    opts = {
+      ensure_installed = { "prettierd" },
+    },
+  },
+  {
     "stevearc/conform.nvim",
     opts = {
       formatters_by_ft = {
         terraform = { "terraform_fmt" },
         ["terraform-vars"] = { "terraform_fmt" },
+        json = { "prettierd", "prettier", stop_after_first = true },
+        jsonc = { "prettierd", "prettier", stop_after_first = true },
       },
       formatters = {
         terraform_fmt = { command = "tofu" },

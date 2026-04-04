@@ -50,6 +50,8 @@
 !.config/lazygit/**
 !.config/metapac
 !.config/metapac/**
+!.config/paru
+!.config/paru/**
 # only track specific .ssh files
 .ssh/**
 

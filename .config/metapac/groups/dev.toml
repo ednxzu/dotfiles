@@ -1,0 +1,79 @@
+arch = {
+  packages = [
+    # python
+    "python",
+    "python-pip",
+    "python-yaml",
+    "python-pipx",
+    "python-json5",
+    "uv",
+    "python-poetry",
+    "python-tox",
+    "pre-commit",
+    "tk", # required by some python GUI tools
+
+    # rust
+    "rustup",
+
+    # containers
+    "podman",
+    "podman-compose",
+
+    # js
+    "npm",
+
+    # git
+    "gitflow-avh",
+
+    # misc
+    "cyme",
+    "devpod",
+    "go-yq",
+    "claude-code",
+    "fio",
+  ]
+}
+
+pipx = {
+  packages = [
+    { name = "copier" },
+    # { name = "git+https://github.com/ednxzu/git-nearit" }, # TODO: fix python requirement
+    {
+      name = "ansible-core",
+      hooks = {
+        after_install = ["pipx", "inject", "--include-apps", "ansible-core", "ansible-lint"]
+      }
+    },
+    {
+      name = "python-openstackclient",
+      hooks = {
+        after_install = ["pipx", "inject", "python-openstackclient",
+          "osc-placement",
+          "python-barbicanclient",
+          "python-ceilometerclient",
+          "python-cinderclient",
+          "python-cloudkittyclient",
+          "python-cyborgclient",
+          "python-designateclient",
+          "python-glanceclient",
+          "python-heatclient",
+          "python-ironicclient",
+          "python-keystoneclient",
+          "python-magnumclient",
+          "python-manilaclient",
+          "python-masakariclient",
+          "python-mistralclient",
+          "python-neutronclient",
+          "python-novaclient",
+          "python-octaviaclient",
+          "python-swiftclient",
+          "python-troveclient",
+          "python-zunclient",
+          "openstacksdk",
+          "aodhclient",
+          "gnureadline"
+        ]
+      }
+    },
+  ]
+}

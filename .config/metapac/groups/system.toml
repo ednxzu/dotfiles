@@ -1,0 +1,29 @@
+arch = {
+  packages = [
+    # base meta-packages
+    "base",
+    "base-devel",
+
+    # kernel + firmware
+    "linux",
+    "linux-firmware",
+
+    # AUR helper
+    "paru",
+
+    # metapac itself
+    "metapac",
+
+    # Arch base system extras that aren't in package groups
+    "efibootmgr",
+    "zram-generator",
+
+    # Other
+    "intel-media-driver",
+    "libva-intel-driver",
+    "vulkan-intel",
+    "vulkan-nouveau",
+    "xf86-video-ati",
+    "xf86-video-nouveau",
+  ]
+}

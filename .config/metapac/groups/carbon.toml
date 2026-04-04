@@ -1,0 +1,7 @@
+arch = {
+  packages = [
+    # social — desktop only
+    "discord",
+    "teamspeak3",
+  ]
+}

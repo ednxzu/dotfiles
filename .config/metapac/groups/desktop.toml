@@ -1,0 +1,89 @@
+arch = {
+  packages = [
+    # X server
+    "xorg-server",
+    "xorg-xinit",
+    "xorg-xev",
+
+    # display manager
+    "ly",
+
+    # window manager
+    "bspwm",
+    "sxhkd",
+
+    # terminal + compositor
+    "kitty",
+    "picom",
+
+    # bar / launcher / notifications
+    "polybar",
+    "rofi",
+    "rofi-emoji",
+    "dmenu",
+    "dunst",
+
+    # desktop utilities
+    "feh",
+    "autorandr",
+    "arandr",
+    "xorg-xrandr",
+    "xorg-xsetroot",
+    "xidlehook",
+    "xss-lock",
+    "xdo",
+    "i3lock-color",
+    "fuse2",  # needed for some AppImages
+
+    # audio (pipewire stack)
+    "pipewire",
+    "pipewire-alsa",
+    "pipewire-pulse",
+    "pipewire-jack",
+    "wireplumber",
+    "libpulse",
+    "gst-plugin-pipewire",
+
+    # bluetooth
+    "bluez",
+    "bluez-utils",
+
+    # MTP (phone file transfer)
+    "gvfs-mtp",
+    "jmtpfs",
+
+    # fonts
+    "noto-fonts-emoji",
+    "inter-font",
+    "ttf-ibm-plex",
+
+    # editor + terminal tools
+    "neovim",
+    "starship",
+    "fzf",
+    "fd",
+    "ripgrep",
+    "bat",
+    "git-delta",
+    "jq",
+    "jc",
+    "inotify-tools",
+    "tree",
+
+    # apps
+    "firefox",
+    "chromium",
+    "nemo",
+    "yazi",
+    "flameshot",
+    "pulsemixer",
+    "vlc",
+    "vlc-plugin-ffmpeg",
+    "signal-desktop",
+    "bluetuith",
+    "flatpak",
+
+    # themes
+    "dracula-icons-theme",
+  ]
+}

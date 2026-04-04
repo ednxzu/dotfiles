@@ -1,0 +1,47 @@
+arch = {
+  packages = [
+    # dotfiles management
+    "git",
+    "stow",
+    "rsync",
+
+    # shell
+    "bash-completion",
+    "man-db",
+
+    # system
+    "reflector",
+    "networkmanager",
+    "networkmanager-openvpn",
+
+    # essentials
+    "unzip",
+    "tree",
+    "vim",
+    "nano",
+    "wget",
+    "xclip",
+    "whois",
+    "tcpdump",
+    "7zip",
+    "openssh",
+    "xdg-utils",
+    "pwgen",
+
+    # network tools
+    "bind",       # dig, nslookup
+    "traceroute",
+    "openbsd-netcat",
+    "inetutils",  # hostname, telnet, etc.
+    "wireless_tools",
+    "wpa_supplicant",
+    "iwd",
+    "networkmanager-strongswan",
+
+    # monitoring
+    "htop",
+    "smartmontools",
+    "tldr",
+    "cpupower",
+  ]
+}

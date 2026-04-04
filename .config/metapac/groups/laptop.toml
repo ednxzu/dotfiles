@@ -1,0 +1,14 @@
+arch = {
+  packages = [
+    # power management
+    "tlp",
+    "tlp-rdw",
+    "powertop",
+
+    # backlight
+    "brightnessctl",
+
+    # battery info
+    "acpi",
+  ]
+}

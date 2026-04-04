@@ -1,0 +1,7 @@
+arch = {
+  packages = [
+    # work tools
+    "kmeet-appimage",
+    "opencode",
+  ]
+}

@@ -1,0 +1,38 @@
+arch = {
+  packages = [
+    # kubernetes
+    "kubectl",
+    "kubelogin",
+    "helm",
+    "fluxcd",
+
+    # secrets
+    "age",
+    "sops",
+
+    # hashicorp-ish
+    "consul",
+    "nomad", "vault",
+
+    # opentofu / terraform
+    "tofu-ls-bin",
+
+    # task runner
+    "go-task",
+
+    # opentofu (the actual CLI, not just the LSP)
+    "opentofu",
+
+    # CI/CD local runners
+    "gitlab-ci-local",
+
+    # networking
+    "conntrack-tools",
+
+    # linting
+    "hadolint-bin",   # Dockerfile linter
+
+    # git
+    "git-review",     # Gerrit
+  ]
+}

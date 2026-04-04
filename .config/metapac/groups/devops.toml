@@ -12,10 +12,13 @@ arch = {
 
     # hashicorp-ish
     "consul",
-    "nomad", "vault",
+    "nomad",
+    "vault",
 
     # opentofu / terraform
     "tofu-ls-bin",
+    "terraform-docs",
+    "opentofu",
 
     # task runner
     "go-task",

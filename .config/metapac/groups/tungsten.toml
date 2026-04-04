@@ -3,5 +3,6 @@ arch = {
     # work tools
     "kmeet-appimage",
     "opencode",
+    "clamav"
   ]
 }

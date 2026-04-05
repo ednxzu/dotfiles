@@ -76,6 +76,7 @@ arch = {
     "nemo",
     "yazi",
     "flameshot",
+    "tty-clock",
     "pulsemixer",
     "vlc",
     "vlc-plugin-ffmpeg",

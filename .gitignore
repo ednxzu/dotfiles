@@ -52,6 +52,8 @@
 !.config/metapac/**
 !.config/paru
 !.config/paru/**
+!.config/fastfetch
+!.config/fastfetch/**
 # only track specific .ssh files
 .ssh/**
 

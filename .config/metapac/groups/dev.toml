@@ -37,7 +37,7 @@ arch = {
 pipx = {
   packages = [
     { name = "copier" },
-    # { name = "git+https://github.com/ednxzu/git-nearit" }, # TODO: fix python requirement
+    { name = "git+https://github.com/ednxzu/git-nearit" },
     {
       name = "ansible-core",
       hooks = {

@@ -3,5 +3,6 @@ arch = {
     # social — desktop only
     "discord",
     "teamspeak3",
+    "rclone"
   ]
 }

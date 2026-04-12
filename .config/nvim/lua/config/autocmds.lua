@@ -17,6 +17,8 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     local pos = vim.api.nvim_win_get_cursor(0)
     vim.cmd([[%s/\s\+$//e]])
     vim.cmd([[%s/\n\+\%$//e]])
+    local line_count = vim.api.nvim_buf_line_count(0)
+    pos[1] = math.min(pos[1], line_count)
     vim.api.nvim_win_set_cursor(0, pos)
   end,
 })

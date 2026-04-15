@@ -66,7 +66,6 @@ export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
 gpgconf --launch gpg-agent
 gpg-connect-agent updatestartuptty /bye >/dev/null
 
-
 # ensure ssh won't break because of missing term files for kitty or alacritty
 # the real TERM value should be xterm-kitty but won't work on most machines
 export TERM=xterm-256color
@@ -121,6 +120,11 @@ source_all_files "$HOME/.bash_config.d/specific.d"
 ##############
 
 source "$HOME/.local/bin/env"
+
+# Go
+
+export GOPATH=$HOME/go
+export PATH=$PATH:${GOPATH}/bin
 
 ###############
 # Final stage #

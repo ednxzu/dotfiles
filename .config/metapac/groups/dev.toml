@@ -15,6 +15,9 @@ arch = {
     # rust
     "rustup",
 
+    # go
+    "go",
+
     # containers
     "podman",
     "podman-compose",

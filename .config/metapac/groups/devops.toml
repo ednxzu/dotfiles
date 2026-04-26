@@ -8,6 +8,7 @@ arch = {
 
     # secrets
     "age",
+    "age-plugin-yubikey",
     "sops",
 
     # hashicorp-ish

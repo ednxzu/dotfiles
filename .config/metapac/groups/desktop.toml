@@ -74,6 +74,7 @@ arch = {
     "firefox",
     "chromium",
     "nemo",
+    "nemo-fileroller",
     "yazi",
     "flameshot",
     "tty-clock",

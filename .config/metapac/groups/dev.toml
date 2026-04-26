@@ -30,7 +30,7 @@ arch = {
 
     # misc
     "cyme",
-    "devpod",
+    "devpod-bin",
     "go-yq",
     "claude-code",
     "fio",

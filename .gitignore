@@ -8,7 +8,7 @@
 !.config/flameshot**
 !.config/systemd
 !.config/systemd/user
-!.config/systemd/user/*.service
+!.config/systemd/user/dotfiles-sync.service
 !.config/dotfiles**
 !.config/openstack
 !.config/openstack/clouds.template.yaml

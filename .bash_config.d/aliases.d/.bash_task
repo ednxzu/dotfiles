@@ -6,4 +6,4 @@ task() {
   go-task "$@"
 }
 
-complete -F _go-task task
+complete -F _go_task task

@@ -32,6 +32,7 @@ install_uv_tools() {
     --with python-zunclient \
     --with openstacksdk \
     --with aodhclient \
+    --with gnocchiclient \
     --with gnureadline
 
   echo "[UV-TOOLS] Done!"

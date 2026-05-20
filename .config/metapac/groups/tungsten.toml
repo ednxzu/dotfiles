@@ -2,6 +2,7 @@ arch = {
   packages = [
     # work tools
     "kmeet-appimage",
+    "kchat-appimage",
     "opencode",
     "clamav"
   ]

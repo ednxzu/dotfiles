@@ -2,7 +2,8 @@
   "extras": [
     "lazyvim.plugins.extras.lang.ansible",
     "lazyvim.plugins.extras.lang.yaml",
-    "lazyvim.plugins.extras.lang.go"
+    "lazyvim.plugins.extras.lang.go",
+    "lazyvim.plugins.extras.lang.python"
   ],
   "install_version": 8,
   "news": {

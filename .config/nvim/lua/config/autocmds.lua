@@ -10,6 +10,15 @@
 -- Detect .j2 files as jinja2
 vim.filetype.add({ extension = { j2 = "jinja2" } })
 
+-- Disable autoformat for opendev.org projects
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+  group = vim.api.nvim_create_augroup("no_autoformat_opendev", { clear = true }),
+  pattern = vim.fn.expand("~/git/opendev.org") .. "/*",
+  callback = function()
+    vim.b.autoformat = false
+  end,
+})
+
 -- Trim trailing whitespace and blank lines at end of file on save
 vim.api.nvim_create_autocmd("BufWritePre", {
   group = vim.api.nvim_create_augroup("trim_whitespace", { clear = true }),

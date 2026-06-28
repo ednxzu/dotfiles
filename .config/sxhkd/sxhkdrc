@@ -52,7 +52,7 @@ XF86AudioMute
 
 # Screenshot
 Print
-    flameshot gui
+    maim -s | swappy -f -
 
 # Reload sxhkd
 super + shift + Escape

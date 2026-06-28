@@ -40,6 +40,7 @@ arch = {
 pipx = {
   packages = [
     { name = "copier" },
+    { name = "reno" },
     { name = "git+https://github.com/ednxzu/git-nearit" },
     {
       name = "ansible-core",

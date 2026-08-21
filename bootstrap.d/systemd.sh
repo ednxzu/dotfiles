@@ -23,6 +23,8 @@ echo "[SYSTEMD] Enabling global services..."
 
 GLOBAL_SERVICES=(
     NetworkManager.service
+    cups.service
+    avahi-daemon.service
 )
 
 sudo systemctl daemon-reload

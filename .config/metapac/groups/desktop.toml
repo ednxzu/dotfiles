@@ -52,6 +52,22 @@ arch = {
     "gvfs-mtp",
     "jmtpfs",
 
+    # printing (CUPS + broad driver coverage)
+    "cups",
+    "cups-filters",
+    "cups-pdf",
+    "ghostscript",
+    "gsfonts",
+    "gutenprint",
+    "foomatic-db-engine",
+    "foomatic-db",
+    "foomatic-db-ppds",
+    "foomatic-db-nonfree",
+    "foomatic-db-nonfree-ppds",
+    "splix", # Samsung SPL2/SPL-C printers
+    "avahi", # mDNS discovery for network/AirPrint printers
+    "nss-mdns",
+
     # fonts
     "noto-fonts-emoji",
     "inter-font",

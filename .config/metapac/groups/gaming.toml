@@ -1,0 +1,10 @@
+arch = {
+  packages = [
+    "wine",
+    "wine-mono",
+    "wine-gecko",
+    "steam",
+    "ntsync-autoload",
+    "lib32-vulkan-radeon",
+  ]
+}

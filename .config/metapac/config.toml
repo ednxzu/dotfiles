@@ -6,6 +6,6 @@ package_manager = "paru"
 
 [hostname_groups]
 # Desktop
-carbon = ["base", "system", "desktop", "dev", "devops", "gpu-amd", "carbon"]
+carbon = ["base", "system", "desktop", "dev", "devops", "gpu-amd", "carbon", "gaming"]
 # Work laptop
 tungsten = ["base", "system", "desktop", "dev", "devops", "laptop", "gpu-intel", "tungsten"]

@@ -10,6 +10,9 @@
 -- Detect .j2 files as jinja2
 vim.filetype.add({ extension = { j2 = "jinja2" } })
 
+-- Detect .pp files as puppet
+vim.filetype.add({ extension = { pp = "puppet" } })
+
 -- Disable autoformat for opendev.org projects
 vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
   group = vim.api.nvim_create_augroup("no_autoformat_opendev", { clear = true }),

@@ -126,6 +126,11 @@ source "$HOME/.local/bin/env"
 export GOPATH=$HOME/go
 export PATH=$PATH:${GOPATH}/bin
 
+# Krew
+
+export KREW_ROOT=$HOME/.krew
+export PATH="${KREW_ROOT}/bin:$PATH"
+
 ###############
 # Final stage #
 ###############

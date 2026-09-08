@@ -67,6 +67,29 @@ arch = {
     "splix", # Samsung SPL2/SPL-C printers
     "avahi", # mDNS discovery for network/AirPrint printers
     "nss-mdns",
+    "ijs",
+    "jbig2dec",
+    "libcupsfilters",
+    "libpaper",
+    "libppd",
+    "pdfio",
+    "poppler",
+    "poppler-data",
+    "libidn",
+    "gpgmepp",
+    "perl-alien-build",
+    "perl-alien-libxml2",
+    "perl-capture-tiny",
+    "perl-clone",
+    "perl-dbi",
+    "perl-ffi-checklib",
+    "perl-file-chdir",
+    "perl-file-which",
+    "perl-path-tiny",
+    "perl-xml-libxml",
+    "perl-xml-namespacesupport",
+    "perl-xml-sax",
+    "perl-xml-sax-base",
 
     # fonts
     "noto-fonts-emoji",
@@ -84,7 +107,6 @@ arch = {
     "jq",
     "jc",
     "inotify-tools",
-    "tree",
 
     # apps
     "firefox",
@@ -101,6 +123,7 @@ arch = {
     "signal-desktop",
     "bluetuith",
     "flatpak",
+    "kchat-appimage",
 
     # themes
     "dracula-icons-theme",

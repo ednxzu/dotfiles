@@ -2,7 +2,6 @@ arch = {
   packages = [
     # social — desktop only
     "discord",
-    "teamspeak3",
-    "rclone"
+    "teamspeak3"
   ]
 }

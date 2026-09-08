@@ -1,14 +1,16 @@
 #! /bin/sh
 
-pgrep -x i3lock > /dev/null && exit 0
+pgrep -x i3lock >/dev/null && exit 0
 
 i3lock \
-  --blur 10 \
-  --radius 100 \
+  --image="$HOME/.config/feh/waves.png" \
+  --max \
+  --radius 90 \
   --ring-width 7 \
   --clock \
   --time-font="JetBrains Mono Nerd Font" \
   --date-font="JetBrains Mono Nerd Font" \
+  --date-str="%A %-d, %m %Y" \
   --time-color=50fa7bF2 \
   --date-color=bd93f9F2 \
   --inside-color=00000000 \

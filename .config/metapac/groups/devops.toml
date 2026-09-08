@@ -2,6 +2,7 @@ arch = {
   packages = [
     # kubernetes
     "kubectl",
+    "krew",
     "kubelogin",
     "helm",
     "fluxcd",
@@ -24,9 +25,6 @@ arch = {
     # task runner
     "go-task",
 
-    # opentofu (the actual CLI, not just the LSP)
-    "opentofu",
-
     # CI/CD local runners
     "gitlab-ci-local",
 
@@ -38,5 +36,8 @@ arch = {
 
     # git
     "git-review",     # Gerrit
+
+    # puppet
+    "puppet-lint"
   ]
 }

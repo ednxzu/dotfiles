@@ -1,3 +1,7 @@
+# only track specific .gnupg files
+.gnupg/**
+!.gnupg/scdaemon.conf
+
 # only track specific .config files
 .config/**
 !.config/alacritty**

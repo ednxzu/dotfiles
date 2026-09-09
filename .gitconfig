@@ -12,6 +12,9 @@ format = ssh
 [commit]
 gpgsign = true
 
+[ghq]
+root = ~/git
+
 [core]
 editor = nvim
 ignorecase = false

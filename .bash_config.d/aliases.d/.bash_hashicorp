@@ -26,3 +26,4 @@ function nomad_login {
 complete -C /usr/bin/nomad nomad
 complete -C /usr/bin/consul consul
 complete -C /usr/bin/vault vault
+complete -C /usr/sbin/tofu tofu

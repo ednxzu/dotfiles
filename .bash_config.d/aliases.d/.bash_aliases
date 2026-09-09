@@ -31,7 +31,6 @@ alias apt-get='sudo apt-get'
 alias apt='sudo apt'
 alias nala='sudo nala'
 alias pacman='sudo pacman'
-alias yay='yay --config $HOME/.config/pacman.conf'
 
 # colorize the grep command output for ease of use (good for log files)
 alias grep='grep --color=auto'

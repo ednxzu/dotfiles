@@ -1,4 +1,11 @@
-#! /bin/bash
+#! /usr/bin/env bash
+
+export HOSTNAME=$(hostname)
+
+case "$HOSTNAME" in
+carbon) export MISE_DOTFILES_GROUPS=desktop,dev,devops,gpu-amd,carbon,gaming,dracula ;;
+tungsten) export MISE_DOTFILES_GROUPS=desktop,dev,devops,gpu-intel,laptop,tungsten,dracula ;;
+esac
 
 # If not running interactively, don't do anything
 case $- in
@@ -135,5 +142,10 @@ export PATH="${KREW_ROOT}/bin:$PATH"
 # Final stage #
 ###############
 
+# start mise
+eval "$(${HOME}/.local/bin/mise activate bash)"
+
 # start starship
 eval "$(starship init bash)"
+
+complete -C /usr/bin/tofu tofu

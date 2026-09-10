@@ -1,0 +1,5 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"aur:kmeet-appimage" = "latest"
+"pacman:clamav" = "latest"
+"pacman:opencode" = "latest"

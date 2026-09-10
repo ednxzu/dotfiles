@@ -1,0 +1,8 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"pacman:amd-ucode" = "latest"
+"pacman:mesa" = "latest"
+"pacman:radeontop" = "latest"
+"pacman:vulkan-radeon" = "latest"
+"pacman:vulkan-tools" = "latest"
+"pacman:xf86-video-amdgpu" = "latest"

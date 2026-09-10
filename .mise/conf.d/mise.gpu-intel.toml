@@ -1,0 +1,8 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"pacman:intel-media-driver" = "latest"
+"pacman:intel-ucode" = "latest"
+"pacman:libva-intel-driver" = "latest"
+"pacman:mesa" = "latest"
+"pacman:sof-firmware" = "latest"
+"pacman:vulkan-intel" = "latest"

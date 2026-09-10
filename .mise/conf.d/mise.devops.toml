@@ -1,0 +1,28 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"aur:git-review" = "latest"
+"aur:gitlab-ci-local" = "latest"
+"aur:hadolint-bin" = "latest"
+"aur:kubelogin" = "latest"
+"aur:puppet-lint" = "latest"
+"aur:terraform-docs" = "latest"
+"aur:tofu-ls-bin" = "latest"
+"pacman:conntrack-tools" = "latest"
+"pacman:consul" = "latest"
+"pacman:fluxcd" = "latest"
+"pacman:go-task" = "latest"
+"pacman:helm" = "latest"
+"pacman:krew" = "latest"
+"pacman:kubectl" = "latest"
+"pacman:nomad" = "latest"
+"pacman:opentofu" = "latest"
+"pacman:sops" = "latest"
+"pacman:vault" = "latest"
+
+[bootstrap.hooks.post-packages]
+run = [
+  "kubectl completion bash > ~/.bash_config.d/completion.d/kubectl",
+  "helm completion bash > ~/.bash_config.d/completion.d/helm",
+  "flux completion bash > ~/.bash_config.d/completion.d/flux",
+  "go-task --completion bash > ~/.bash_config.d/completion.d/task",
+]

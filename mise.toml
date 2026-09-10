@@ -1,0 +1,33 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[dotfiles]
+"~/.config" = { source = ".config", mode = "symlink-each", manifest = "git" }
+"~/.bash_config.d" = { mode = "symlink" }
+"~/.bash_logout" = { mode = "symlink" }
+"~/.bashrc" = { mode = "symlink" }
+"~/.fonts" = { mode = "symlink" }
+"~/.gitconfig" = { mode = "symlink" }
+"~/.gitconfig.d" = { mode = "symlink" }
+"~/.gnupg" = { source = ".gnupg", mode = "symlink-each", manifest = "git" }
+"~/.local" = { mode = "symlink" }
+"~/.themes" = { mode = "symlink" }
+"~/.vimrc" = { mode = "symlink" }
+"~/.xinitrc" = { mode = "symlink" }
+"~/.Xresources" = { mode = "symlink" }
+
+[bootstrap.groups.lanson]
+system = true
+
+[bootstrap.users.lanson]
+system = true
+group = "lanson"
+home = "/home/lanson"
+shell = "/usr/bin/bash"
+comment = "Bertrand Lanson"
+create_home = true
+move_home = true
+
+[bootstrap.files."/etc/sudoers.d/lanson"]
+source = "./bootstrap.d/sudoers.d/lanson"
+owner = "root"
+group = "root"
+mode = "0660"

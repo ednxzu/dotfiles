@@ -1,0 +1,2 @@
+env = [{% for g in env.MISE_DOTFILES_GROUPS | default(value="") | split(pat=",") %}{% if g | length > 0 %}"{{ g }}"{% if not loop.last %}, {% endif %}{% endif %}{% endfor %}]
+env_conf_d = true

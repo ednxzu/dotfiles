@@ -1,0 +1,10 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"aur:dracula-gtk-theme" = "latest"
+"aur:dracula-icons-theme" = "latest"
+"aur:dracula-cursors-git" = "latest"
+
+[dotfiles]
+"~/.config/gtk-4.0/gtk.css" = { source = "/usr/share/themes/Dracula/gtk-4.0/gtk.css", mode = "symlink" }
+"~/.config/gtk-4.0/gtk-dark.css" = { source = "/usr/share/themes/Dracula/gtk-4.0/gtk-dark.css", mode = "symlink" }
+"~/.config/assets" = { source = "/usr/share/themes/Dracula/assets", mode = "symlink" }

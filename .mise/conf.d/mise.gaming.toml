@@ -1,0 +1,8 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"pacman:lib32-vulkan-radeon" = "latest"
+"pacman:ntsync-autoload" = "latest"
+"pacman:steam" = "latest"
+"pacman:wine" = "latest"
+"pacman:wine-gecko" = "latest"
+"pacman:wine-mono" = "latest"

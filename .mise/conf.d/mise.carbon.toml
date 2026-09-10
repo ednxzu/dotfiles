@@ -1,0 +1,4 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"pacman:discord" = "latest"
+"pacman:teamspeak3" = "latest"

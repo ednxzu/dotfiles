@@ -3,12 +3,15 @@ set -euo pipefail
 
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket 2>/dev/null || true)
 
-cd "$HOME/.dotfiles"
+DOTFILES=$HOME/.dotfiles
+
+cd $DOTFILES
 
 until git pull origin main; do
-  echo "Waiting for SSH agent..."
+  echo "[D] Waiting for SSH agent..."
   sleep 2
 done
 
-stow .
+${HOME}/.local/bin/mise --cd $DOTFILES bootstrap --yes
+
 echo "[*] Dotfiles synced"

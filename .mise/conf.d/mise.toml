@@ -1,0 +1,69 @@
+#:schema https://mise.jdx.dev/schema/mise.json
+[bootstrap.packages]
+"pacman:7zip" = "latest"
+"pacman:age" = "latest"
+"pacman:age-plugin-yubikey" = "latest"
+"pacman:base" = "latest"
+"pacman:base-devel" = "latest"
+"pacman:bash-completion" = "latest"
+"pacman:bind" = "latest"
+"pacman:cpupower" = "latest"
+"pacman:efibootmgr" = "latest"
+"pacman:fastfetch" = "latest"
+"pacman:git" = "latest"
+"pacman:gnupg" = "latest"
+"pacman:htop" = "latest"
+"pacman:inetutils" = "latest"
+"pacman:intel-media-driver" = "latest"
+"pacman:iwd" = "latest"
+"pacman:libva-intel-driver" = "latest"
+"pacman:linux" = "latest"
+"pacman:linux-firmware" = "latest"
+"pacman:man-db" = "latest"
+"pacman:nano" = "latest"
+"pacman:networkmanager" = "latest"
+"pacman:networkmanager-openvpn" = "latest"
+"pacman:networkmanager-strongswan" = "latest"
+"pacman:openbsd-netcat" = "latest"
+"pacman:openssh" = "latest"
+"pacman:pwgen" = "latest"
+"pacman:rbw" = "latest"
+"pacman:reflector" = "latest"
+"pacman:rsync" = "latest"
+"pacman:smartmontools" = "latest"
+"pacman:tcpdump" = "latest"
+"pacman:tldr" = "latest"
+"pacman:traceroute" = "latest"
+"pacman:tree" = "latest"
+"pacman:unzip" = "latest"
+"pacman:vim" = "latest"
+"pacman:vulkan-intel" = "latest"
+"pacman:vulkan-nouveau" = "latest"
+"pacman:wget" = "latest"
+"pacman:whois" = "latest"
+"pacman:wireless_tools" = "latest"
+"pacman:wpa_supplicant" = "latest"
+"pacman:xclip" = "latest"
+"pacman:xdg-utils" = "latest"
+"pacman:xf86-video-ati" = "latest"
+"pacman:xf86-video-nouveau" = "latest"
+"pacman:yubikey-manager" = "latest"
+"pacman:zram-generator" = "latest"
+
+[bootstrap.services."pcscd.socket"]
+state = "running"
+enabled = true
+
+[bootstrap.services.NetworkManager]
+state = "running"
+enabled = true
+
+[bootstrap.linux.systemd.units.dotfiles-sync]
+description = "Sync dotfiles repository and apply changes"
+type = "oneshot"
+exec_start = "/bin/bash -c '[[ -x \"$HOME/.config/dotfiles/dotfiles-sync.sh\" ]] && \"$HOME/.config/dotfiles/dotfiles-sync.sh\"'"
+standard_output = "journal"
+standard_error = "journal"
+remain_after_exit = true
+# Do NOT start, otherwise, really bad recursion
+start = false

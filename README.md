@@ -11,7 +11,7 @@
 
 ![bspwm Badge](https://img.shields.io/badge/bspwm-2E2E2E?logo=bspwm&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
 ![Git Badge](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
-![VSCodium Badge](https://img.shields.io/badge/VSCodium-2F80ED?logo=vscodium&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
+![Neovim Badge](https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
 ![Docker Badge](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
 ![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
 

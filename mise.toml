@@ -8,7 +8,7 @@
 "~/.gitconfig" = { mode = "symlink" }
 "~/.gitconfig.d" = { mode = "symlink" }
 "~/.gnupg" = { source = ".gnupg", mode = "symlink-each", manifest = "git" }
-"~/.local" = { mode = "symlink" }
+"~/.local" = { source = ".local", mode = "symlink-each", manifest = "git" }
 "~/.themes" = { mode = "symlink" }
 "~/.vimrc" = { mode = "symlink" }
 "~/.xinitrc" = { mode = "symlink" }

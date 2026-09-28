@@ -56,13 +56,15 @@
 "pacman:rustup" = "latest"
 "pacman:tk" = "latest"
 "pacman:uv" = "latest"
+"pacman:slumber" = "latest"
 
 [bootstrap.hooks.post-packages]
 run = [
   "devpod-cli completion bash >~/.bash_config.d/completion.d/devpod",
   "poetry completions bash > ~/.bash_config.d/completion.d/poetry",
   "uv generate-shell-completion bash > ~/.bash_config.d/completion.d/uv",
-  "rclone completion bash - > ~/.bash_config.d/completion.d/rclone"
+  "rclone completion bash - > ~/.bash_config.d/completion.d/rclone",
+  "echo \"source <(COMPLETE=bash slumber)\" >> ~/.bash_config.d/completion.d/slumber"
 ]
 
 [bootstrap.hooks.post-tools]

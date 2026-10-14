@@ -2,12 +2,10 @@
   "$schema": "https://opencode.ai/config.json",
   "share": "disabled",
   "plugins": ["@openchamber/opencode-claude"],
-  "provider": {},
-  "model": "",
+  "model": "claude-code/claude-opus-5-5[1m]",
   "default_agent": "plan",
   "agent": {
     "build": {
-      "model": "infomaniak/euria-code",
       "permission": {
         "edit": "ask",
         "bash": {
@@ -41,7 +39,6 @@
       }
     },
     "plan": {
-      "model": "infomaniak/euria-code",
       "tools": {
         "write": false
       },

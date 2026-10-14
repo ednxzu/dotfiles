@@ -58,6 +58,12 @@
 !.config/paru/**
 !.config/fastfetch
 !.config/fastfetch/**
+!.config/opencode
+!.config/opencode/opencode.json
+!.config/opencode/agents
+!.config/opencode/agents/*.md
+!.config/opencode/commands
+!.config/opencode/commands/*.md
 # only track specific .ssh files
 .ssh/**
 

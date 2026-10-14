@@ -1,5 +1,7 @@
 #:schema https://mise.jdx.dev/schema/mise.json
 [dotfiles]
+"~/.agents" = { source = ".agents", mode = "symlink-each", manifest = "git" }
+"~/.claude/skills" = { source = ".agents/skills", mode = "symlink-each", manifest = "git" }
 "~/.config" = { source = ".config", mode = "symlink-each", manifest = "git" }
 "~/.bash_config.d" = { mode = "symlink" }
 "~/.bash_logout" = { mode = "symlink" }

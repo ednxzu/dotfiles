@@ -34,7 +34,6 @@
 }
 
 [bootstrap.packages]
-"aur:claude-code" = "latest"
 "aur:devpod-bin" = "latest"
 "aur:gitflow-avh" = "latest"
 "pacman:cyme" = "latest"

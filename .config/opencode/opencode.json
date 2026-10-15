@@ -3,6 +3,13 @@
   "share": "disabled",
   "plugins": ["@openchamber/opencode-claude"],
   "model": "claude-code/claude-opus-5-5[1m]",
+  "mcp": {
+    "gitlab-ednz": {
+      "type": "remote",
+      "url": "https://gitlab.ednz.fr/api/v4/mcp",
+      "enabled": true
+    }
+  },
   "default_agent": "plan",
   "agent": {
     "build": {

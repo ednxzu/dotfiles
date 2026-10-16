@@ -3,3 +3,5 @@
 "aur:kmeet-appimage" = "latest"
 "pacman:clamav" = "latest"
 "pacman:opencode" = "latest"
+"pacman:ipmitool" = "latest"
+"aur:rundeck-cli" = "latest"

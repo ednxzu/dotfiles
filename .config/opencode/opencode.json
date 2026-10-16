@@ -2,11 +2,61 @@
   "$schema": "https://opencode.ai/config.json",
   "share": "disabled",
   "plugins": ["@openchamber/opencode-claude"],
+  "provider": {
+    "infomaniak": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "infomaniak",
+      "options": {
+        "baseURL": "{env:OPENAI_BASE_URL}",
+        "headers": {
+          "X-LLM-Application-Tag": "codegpt",
+          "Authorization": "Bearer {env:OPENAI_API_KEY}"
+        }
+      },
+      "models": {
+        "euria-code": {
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "euria-code",
+          "limit": {
+            "context": 250000,
+            "output": 100000
+          },
+          "cost": {
+            "input": 0.6,
+            "output": 3.0
+          }
+        },
+        "euria-code-tiny": {
+          "modalities": {
+            "input": ["text", "image"],
+            "output": ["text"]
+          },
+          "name": "euria-code-tiny",
+          "limit": {
+            "context": 200000,
+            "output": 100000
+          },
+          "cost": {
+            "input": 0.3,
+            "output": 2.4
+          }
+        }
+      }
+    }
+  },
   "model": "claude-code/claude-opus-5-5[1m]",
   "mcp": {
     "gitlab-ednz": {
       "type": "remote",
       "url": "https://gitlab.ednz.fr/api/v4/mcp",
+      "enabled": true
+    }
+    "gitlab-infomaniak": {
+      "type": "remote",
+      "url": "https://gitlab.infomaniak.ch/api/v4/mcp",
       "enabled": true
     }
   },
@@ -53,9 +103,13 @@
         "edit": "ask",
         "bash": {
           "*": "ask",
-          "git status": "allow",
+          "cat *": "allow",
+          "git status*": "allow",
           "git diff*": "allow",
-          "git log *": "allow",
+          "git log*": "allow",
+          "git show *": "allow",
+          "diff *": "allow",
+          "echo *": "allow",
           "grep *": "allow",
           "ls *": "allow",
           "pwd": "allow",

@@ -4,7 +4,7 @@ pgrep -x i3lock >/dev/null && exit 0
 
 i3lock \
   --image="$HOME/.config/feh/waves.png" \
-  --max \
+  --fill \
   --radius 90 \
   --ring-width 7 \
   --clock \

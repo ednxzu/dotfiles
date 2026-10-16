@@ -53,7 +53,7 @@
       "type": "remote",
       "url": "https://gitlab.ednz.fr/api/v4/mcp",
       "enabled": true
-    }
+    },
     "gitlab-infomaniak": {
       "type": "remote",
       "url": "https://gitlab.infomaniak.ch/api/v4/mcp",

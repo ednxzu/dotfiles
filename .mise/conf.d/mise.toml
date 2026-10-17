@@ -4,7 +4,6 @@
 "aur:openchamber" = "latest"
 "pacman:7zip" = "latest"
 "pacman:age" = "latest"
-"pacman:age-plugin-yubikey" = "latest"
 "pacman:base" = "latest"
 "pacman:base-devel" = "latest"
 "pacman:bash-completion" = "latest"

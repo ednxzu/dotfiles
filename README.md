@@ -1,113 +1,112 @@
-# 🧰 Dotfiles Management with GNU Stow
+# dotfiles
 
 <div align="center">
 
-![Arch Linux Badge](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=fff&style=for-the-badge)
-![GNU Bash Badge](https://img.shields.io/badge/GNU%20Bash-4EAA25?logo=gnubash&logoColor=fff&style=for-the-badge)
+![Arch Linux](https://img.shields.io/badge/Arch%20Linux-1793D1?logo=archlinux&logoColor=fff&style=for-the-badge)
+![mise](https://img.shields.io/badge/mise--en--place-2E2E2E?style=for-the-badge)
+![bspwm](https://img.shields.io/badge/bspwm-2E2E2E?logo=bspwm&logoColor=fff&style=for-the-badge)
+![Neovim](https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge)
 
 </div>
 
-<div align="center">
+My Arch Linux setup, managed end to end by [mise-en-place](https://mise.jdx.dev):
+symlinks, pacman/AUR packages, pipx tools, systemd services and units, the user
+account, sudoers, and post-install hooks all live in `mise.toml` and
+`.mise/conf.d/`.
 
-![bspwm Badge](https://img.shields.io/badge/bspwm-2E2E2E?logo=bspwm&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
-![Git Badge](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
-![Neovim Badge](https://img.shields.io/badge/Neovim-57A143?logo=neovim&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
-![Docker Badge](https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff&style=for-the-badge)&nbsp;&nbsp;
-![Python Badge](https://img.shields.io/badge/Python-3776AB?logo=python&logoColor=fff&style=for-the-badge)
+The repository mirrors `$HOME`. Nothing is copied: mise symlinks files from
+`~/.dotfiles` into place.
 
-</div>
+## Quick start
 
-This repository contains my personal configuration files (“dotfiles”) for Arch Linux, managed using [**GNU Stow**](https://www.gnu.org/software/stow/).
+1. Install Arch with `archinstall` using the **Desktop / bspwm** profile, with
+   bluetooth and pipewire enabled, then reboot. The bootstrap needs a running
+   systemd, so it won't work from the chroot.
 
-The repository is structured just like your `$HOME` would be, making it easier to simply stow everything into place, and keep it synced.
+2. Clone the repository:
 
-## 🚀 Quick Start
+   ```bash
+   sudo pacman -S git
+   git clone https://github.com/ednxzu/dotfiles.git ~/.dotfiles
+   ```
 
-### 1. Install Arch Linux
+3. Choose which groups to apply (see [Groups](#groups)):
 
-I use **archinstall** with the default **Desktop / bspwm** profile. I also enable bluetooth and the audio server (pipewire) through **archinstall**.
+   ```bash
+   export MISE_DOTFILES_GROUPS=desktop,dev,devops,gpu-amd,dracula
+   ```
 
-Once installation is complete:
+4. Bootstrap, then reboot:
+
+   ```bash
+   bash ~/.dotfiles/bootstrap.d/bootstrap.sh
+   reboot
+   ```
+
+`bootstrap.sh` installs `yay`, installs mise, trusts the repository and runs
+`mise bootstrap`. That step does the actual work.
+
+## Layout
+
+```
+~/.dotfiles
+├── mise.toml              # symlinks ([dotfiles]), user, group, sudoers
+├── .miserc.toml           # maps $MISE_DOTFILES_GROUPS to mise envs
+├── .mise/conf.d/
+│   ├── mise.toml          # base: always applied
+│   └── mise.<group>.toml  # applied only when <group> is selected
+├── bootstrap.d/           # pre-mise shim (yay + mise install)
+└── .config/ .local/ ...   # the dotfiles themselves
+```
+
+How a group gets applied:
+
+```
+hostname ──► .bashrc case ──► MISE_DOTFILES_GROUPS ──► .miserc.toml env list
+                                                          │
+                                                          ▼
+                          .mise/conf.d/mise.toml + mise.<group>.toml ──► mise bootstrap
+```
+
+## Groups
+
+| Group       | Contents                                                                            |
+|-------------|-------------------------------------------------------------------------------------|
+| *(base)*    | Core system, networking, gpg/yubikey, CLI basics, AI tooling, `dotfiles-sync` unit  |
+| `desktop`   | Xorg, bspwm/sxhkd/polybar/rofi, pipewire, bluetooth, printing, apps                 |
+| `dev`       | Go, Rust, Python tooling, podman, pipx tools (ansible, openstackclient, reno…)      |
+| `devops`    | kubectl/helm/flux, OpenTofu, Vault/Consul, sops                                     |
+| `dracula`   | Dracula GTK/icon/cursor themes and GTK4 symlinks                                    |
+| `gaming`    | Steam, Wine, ntsync                                                                 |
+| `gpu-amd`   | AMD microcode, mesa, Vulkan, amdgpu                                                 |
+| `gpu-intel` | Intel microcode, media drivers, Vulkan                                              |
+| `laptop`    | TLP, powertop, backlight, ACPI                                                      |
+| `carbon`    | Host-specific: desktop machine                                                      |
+| `tungsten`  | Host-specific: work laptop                                                          |
+
+Group sets for known hosts are defined in `.bashrc`.
+
+## Day-to-day
+
+Re-apply after any change:
 
 ```bash
-reboot
+mise --cd ~/.dotfiles bootstrap
 ```
 
-> **Note:** A reboot is required — you need a running systemd environment for the bootstrap process to work (it won’t run correctly in the chroot).
+- **Add a package.** Add `"pacman:<pkg>"` or `"aur:<pkg>"` under
+  `[bootstrap.packages]` in the right `conf.d` file.
+- **Add a dotfile.** Directories such as `.config`, `.local` and `.gnupg` use
+  `symlink-each` with `manifest = "git"`, so only files tracked by git get
+  linked. Un-ignore the file in `.gitignore` and commit it. Top-level files need
+  their own entry in `[dotfiles]` in `mise.toml`.
+- **Add a machine.** Add a line to the hostname `case` in `.bashrc`, and add
+  `.mise/conf.d/mise.<host>.toml` if the machine needs its own packages.
+- **Sync.** The `dotfiles-sync` user unit runs
+  `.config/dotfiles/dotfiles-sync.sh`, which runs `git pull` and then
+  `mise bootstrap --yes`. You can also run the script by hand.
 
-### 2. Run the bootstrap script
+## Notes
 
-Install `git`:
-
-```bash
-sudo pacman -S git
-```
-
-Clone this repository:
-
-```bash
-git clone https://github.com/ednxzu/dotfiles.git ~/.dotfiles
-```
-
-Run the bootstrap script:
-
-```bash
-bash ~/.dotfiles/bootstrap.d/bootstrap.sh
-```
-
-This will:
-
-* Install required packages
-* Set up symlinks using GNU Stow
-* Configure system and user settings
-
-The process takes around **20 minutes**. Once it finishes, reboot:
-
-```bash
-reboot
-```
-
-### 3. Configure machine-specific settings
-
-After the bootstrap completes, copy the base configuration file:
-
-```bash
-cp ~/.dotfiles/config.sh ~/.bash_config.d/config.sh
-```
-
-Then edit `~/.bash_config.d/config.sh` to set any **machine-specific variables**, or environment overrides.
-
-## 🧩 Repository Structure
-
-Each top-level directory corresponds to a stow package. For example:
-
-```
-.gitconfig
-.bashrc
-.config/
-    bspwm/
-    sxhkd/
-    polybar/
-    dunst/
-```
-
-To stow a specific package manually (for example, only `.config`):
-
-```bash
-cd ~/.dotfiles
-stow .config
-```
-
-To unstow it:
-
-```bash
-stow -D .config
-```
-
-## 🪄 Notes
-
-* The bootstrap script assumes **Arch Linux** as a base system.
-* Most configuration files are written with **bspwm**, **polybar**, and **rofi** in mind.
-* You can adapt this repo to your own setup by removing or modifying directories before running the bootstrap.
-* Machine-specific settings go in `~/.bash_config.d/config.sh` (not versioned in Git).
-* This setup assumes you're using `autorandr` for managing display configuration (see `sxhkdrc`).
+- Assumes Arch Linux and an X11 bspwm session (polybar, rofi, picom, dunst).
+- Display layouts are handled by `autorandr` (see `sxhkdrc`).

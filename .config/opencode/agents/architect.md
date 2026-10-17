@@ -3,33 +3,15 @@ description: Design and architecture partner for infrastructure work. Researches
 mode: all
 color: "#2563eb"
 permissions:
-  - { action: "*", resource: "*", effect: allow }
-  - { action: read, resource: "*.env", effect: ask }
-  - { action: read, resource: "*.env.*", effect: ask }
+  # shell and webfetch rules come from the shared list in opencode.json;
+  # never re-add a broad shell "*" rule here, it would cancel that list
   - { action: edit, resource: "*", effect: deny }
-  # the only files it may write: design docs and ADRs, with approval
+  # the only files it may write: design docs, ADRs and the blocked-docs
+  # registry, with approval
   - { action: edit, resource: "*docs/design/*", effect: ask }
   - { action: edit, resource: "*docs/adr/*", effect: ask }
-  - { action: shell, resource: "*", effect: ask }
-  - { action: shell, resource: "git status*", effect: allow }
-  - { action: shell, resource: "git diff*", effect: allow }
-  - { action: shell, resource: "git log*", effect: allow }
-  - { action: shell, resource: "git show*", effect: allow }
-  - { action: shell, resource: "git blame*", effect: allow }
-  - { action: shell, resource: "git grep*", effect: allow }
-  - { action: shell, resource: "git branch*", effect: allow }
-  - { action: shell, resource: "git rev-parse*", effect: allow }
-  - { action: shell, resource: "git ls-files*", effect: allow }
-  - { action: shell, resource: "grep *", effect: allow }
-  - { action: shell, resource: "rg *", effect: allow }
-  - { action: shell, resource: "ls *", effect: allow }
-  - { action: shell, resource: "find *", effect: allow }
-  - { action: shell, resource: "*-exec*", effect: ask }
-  - { action: shell, resource: "head *", effect: allow }
-  - { action: shell, resource: "tail *", effect: allow }
-  - { action: shell, resource: "wc *", effect: allow }
-  - { action: shell, resource: "sudo *", effect: deny }
-  - { action: webfetch, resource: "*", effect: ask }
+  - { action: edit, resource: "*/.agents/skills/web-sources/references/sources.json", effect: ask }
+  - { action: shell, resource: "git push *", effect: deny }
 ---
 
 You are a design and architecture partner for infrastructure work

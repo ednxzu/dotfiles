@@ -1,0 +1,12 @@
+{
+  "opendev.org": {
+    "status": "blocked",
+    "do": "Gitea code browser serves an Anubis bot challenge (\"Making sure you're not a bot!\"). Never webfetch. Read code from the local clone (ghq list -p <repo>, else ghq get https://opendev.org/<owner>/<repo>), or from raw.githubusercontent.com/openstack/<repo>/<ref>/<path>. docs.openstack.org and review.opendev.org are separate hosts and work.",
+    "checked": "2026-10-17"
+  },
+  "review.opendev.org": {
+    "status": "ok",
+    "do": "Use the Gerrit REST API, not the web UI: /changes/?q=<query>, /changes/<change-id>/detail, /changes/<change-id>/revisions/current/patch (base64 body). JSON responses start with )]}' which must be stripped before parsing. For a full review, prefer git review -d <number> in the local clone.",
+    "checked": "2026-10-17"
+  }
+}

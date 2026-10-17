@@ -52,13 +52,20 @@ evidence rule.
 
 ## Locating the repo
 
-Repos are usually cloned at `~/git/<forge-host>/<owner>/<repo>` (for example
-`~/git/github.com/<owner>/<repo>`). Look there first, and search under
-`~/git` if the layout doesn't match. If you are already inside the repo,
-use it.
+Repos are cloned at `~/git/<forge-host>/<owner>/<repo>` (for example
+`~/git/github.com/<owner>/<repo>`), the ghq layout. If you are already
+inside the repo, use it. Otherwise find it with `ghq list -p <repo>`, or
+search under `~/git` if ghq isn't installed.
 
-If the repo isn't found locally, ask the user where it is or ask them to
-clone it. Never clone it yourself.
+If the repo isn't found locally, clone it into that layout yourself:
+`ghq get <repo-url>`, or without ghq
+`git clone <repo-url> ~/git/<forge-host>/<owner>/<repo>`. Never clone
+anywhere else, never clone over an existing directory, and never pass
+`ghq get -u`: updating pulls into a checkout that may hold the user's work.
+Use `git -C <repo> fetch origin` to refresh an existing clone instead.
+
+Prefer the local clone over the project's web code browser: some forges
+block agents (see the web-sources skill).
 
 ## Working across refs without disturbing the checkout
 

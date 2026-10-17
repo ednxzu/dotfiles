@@ -9,7 +9,12 @@ OpenStack project (remote on `opendev.org`, or packaging metadata naming an
 OpenStack repos are cloned at `~/git/opendev.org/openstack/<repo>`, for
 example `~/git/opendev.org/openstack/nova` or
 `~/git/opendev.org/openstack/kolla-ansible`. If the named repo isn't there,
-ask the user to clone it. Never clone it yourself.
+clone it with `ghq get https://opendev.org/openstack/<repo>`, following the
+cloning rules in the main skill.
+
+Never webfetch `opendev.org`: its code browser serves agents a bot
+challenge. Read code from the clone. `docs.openstack.org` and the Gerrit
+REST API on `review.opendev.org` do work (see the web-sources skill).
 
 ## Refs and releases
 

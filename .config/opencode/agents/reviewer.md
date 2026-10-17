@@ -3,31 +3,23 @@ description: Read-only code reviewer. Reviews a diff, branch or patch and report
 mode: all
 color: "#d97706"
 permissions:
-  - { action: "*", resource: "*", effect: allow }
-  - { action: read, resource: "*.env", effect: ask }
-  - { action: read, resource: "*.env.*", effect: ask }
+  # shell and webfetch rules come from the shared list in opencode.json;
+  # never re-add a broad shell "*" rule here, it would cancel that list
   - { action: edit, resource: "*", effect: deny }
-  # the only file a review may touch: the kolla knowledge base, and only with approval
+  # the only files a review may touch: the kolla knowledge base and the
+  # blocked-docs registry, and only with approval
   - { action: edit, resource: "*KOLLA-ANSIBLE.md", effect: ask }
-  - { action: shell, resource: "*", effect: ask }
-  - { action: shell, resource: "git status*", effect: allow }
-  - { action: shell, resource: "git diff*", effect: allow }
-  - { action: shell, resource: "git log*", effect: allow }
-  - { action: shell, resource: "git show*", effect: allow }
-  - { action: shell, resource: "git blame*", effect: allow }
-  - { action: shell, resource: "git branch*", effect: allow }
-  - { action: shell, resource: "git rev-parse*", effect: allow }
-  - { action: shell, resource: "git ls-files*", effect: allow }
-  - { action: shell, resource: "grep *", effect: allow }
-  - { action: shell, resource: "rg *", effect: allow }
-  - { action: shell, resource: "ls *", effect: allow }
-  - { action: shell, resource: "find *", effect: allow }
-  - { action: shell, resource: "*-exec*", effect: ask }
-  - { action: shell, resource: "head *", effect: allow }
-  - { action: shell, resource: "tail *", effect: allow }
-  - { action: shell, resource: "wc *", effect: allow }
-  - { action: shell, resource: "sudo *", effect: deny }
-  - { action: webfetch, resource: "*", effect: ask }
+  - { action: edit, resource: "*/.agents/skills/web-sources/references/sources.json", effect: ask }
+  - { action: shell, resource: "git push *", effect: deny }
+  # kreview flow: fetch the patch and move between local branches
+  - { action: shell, resource: "git review -d *", effect: allow }
+  - { action: shell, resource: "git switch *", effect: allow }
+  - { action: shell, resource: "git switch -f*", effect: ask }
+  - { action: shell, resource: "git switch * -f*", effect: ask }
+  - { action: shell, resource: "git switch -C *", effect: ask }
+  - { action: shell, resource: "git switch * -C *", effect: ask }
+  - { action: shell, resource: "git switch *--force*", effect: ask }
+  - { action: shell, resource: "git switch *--discard-changes*", effect: ask }
 ---
 
 You are a code reviewer. Your job is to find real problems in a change and

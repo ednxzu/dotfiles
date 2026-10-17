@@ -1,6 +1,7 @@
 #! /bin/bash
 
-export VAULT_ADDR=$CONFIG_VAULT_ADDR
+# set required variables in specific.d/hashicorp.sh so that they're untracked
+
 function vault_login {
   export VAULT_TOKEN=$(vault login -method=oidc -path=authentik -token-only role="$1")
   echo "Vault token: $VAULT_TOKEN"
@@ -11,19 +12,11 @@ function vault_login_ldap {
   echo "Vault token: $VAULT_TOKEN"
 }
 
-export CONSUL_HTTP_ADDR=$CONFIG_CONSUL_HTTP_ADDR
 function consul_login {
   export CONSUL_HTTP_TOKEN=$(vault read -field=token consul/creds/$1)
   echo "Consul token: $CONSUL_HTTP_TOKEN"
 }
 
-export NOMAD_ADDR=$CONFIG_NOMAD_ADDR
-function nomad_login {
-  export NOMAD_TOKEN=$(nomad login -method=authentik -json | jq -r .SecretID)
-  echo "Nomad token: $NOMAD_TOKEN"
-}
-
-complete -C /usr/bin/nomad nomad
 complete -C /usr/bin/consul consul
 complete -C /usr/bin/vault vault
 complete -C /usr/sbin/tofu tofu

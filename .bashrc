@@ -21,14 +21,6 @@ if [ -f "$HOME/.bash_config.d/helpers.sh" ]; then
   . $HOME/.bash_config.d/helpers.sh
 fi
 
-#############################
-# Source configuration file #
-#############################
-
-if [ -f "$HOME/.bash_config.d/config.sh" ]; then
-  . $HOME/.bash_config.d/config.sh
-fi
-
 #########################
 # History configuration #
 #########################

@@ -5,7 +5,6 @@ DOTFILES=$HOME/.dotfiles
 
 echo "[BOOTSTRAP] Starting..."
 
-# Run first stow
 rm ${HOME}/.bashrc ${HOME}/.bash_logout || true
 
 # Source yay installer

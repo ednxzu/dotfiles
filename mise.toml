@@ -16,6 +16,13 @@
 "~/.xinitrc" = { mode = "symlink" }
 "~/.Xresources" = { mode = "symlink" }
 
+[tasks."rtk:setup"]
+description = "Install the rtk OpenCode plugin (rerun after rtk upgrades)"
+# rtk.ts is embedded in the rtk binary and versioned with it, so it is
+# generated rather than tracked. --no-patch leaves ~/.claude/settings.json
+# alone: the Claude Bash hook never fires under OpenChamber.
+run = "rtk init -g --opencode --hook-only --no-patch"
+
 [bootstrap.groups.lanson]
 system = true
 

@@ -2,16 +2,8 @@
 description: Design and architecture partner for infrastructure work. Researches the real system, challenges options, and writes design docs and ADRs; never changes code or config.
 mode: all
 color: "#2563eb"
-permissions:
-  # shell and webfetch rules come from the shared list in opencode.json;
-  # never re-add a broad shell "*" rule here, it would cancel that list
-  - { action: edit, resource: "*", effect: deny }
-  # the only files it may write: design docs, ADRs and the blocked-docs
-  # registry, with approval
-  - { action: edit, resource: "*docs/design/*", effect: ask }
-  - { action: edit, resource: "*docs/adr/*", effect: ask }
-  - { action: edit, resource: "*/.agents/skills/web-sources/references/sources.json", effect: ask }
-  - { action: shell, resource: "git push *", effect: deny }
+# permission rules live in opencode.json agents.architect.permissions:
+# rtk cannot read frontmatter rules and would skip every rewrite
 ---
 
 You are a design and architecture partner for infrastructure work

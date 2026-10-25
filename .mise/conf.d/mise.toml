@@ -2,6 +2,7 @@
 [bootstrap.packages]
 "aur:claude-code" = "latest"
 "aur:openchamber" = "latest"
+"aur:rtk-bin" = "latest"
 "pacman:7zip" = "latest"
 "pacman:age" = "latest"
 "pacman:base" = "latest"
@@ -51,6 +52,11 @@
 "pacman:xf86-video-nouveau" = "latest"
 "pacman:yubikey-manager" = "latest"
 "pacman:zram-generator" = "latest"
+
+[bootstrap.hooks.post-packages]
+run = [
+  "mise --cd ~/.dotfiles run rtk:setup",
+]
 
 [bootstrap.services."pcscd.socket"]
 state = "running"

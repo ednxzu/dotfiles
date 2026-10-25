@@ -1,6 +1,5 @@
 ---
 mode: primary
-permissions:
-  - { action: edit, resource: "*", effect: ask }
-  - { action: shell, resource: "mkdir -p *", effect: allow }
+# permission rules live in opencode.json agents.build.permissions:
+# rtk cannot read frontmatter rules and would skip every rewrite
 ---

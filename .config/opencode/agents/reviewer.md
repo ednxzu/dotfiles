@@ -2,24 +2,8 @@
 description: Read-only code reviewer. Reviews a diff, branch or patch and reports findings with file:line evidence; never edits code.
 mode: all
 color: "#d97706"
-permissions:
-  # shell and webfetch rules come from the shared list in opencode.json;
-  # never re-add a broad shell "*" rule here, it would cancel that list
-  - { action: edit, resource: "*", effect: deny }
-  # the only files a review may touch: the kolla knowledge base and the
-  # blocked-docs registry, and only with approval
-  - { action: edit, resource: "*KOLLA-ANSIBLE.md", effect: ask }
-  - { action: edit, resource: "*/.agents/skills/web-sources/references/sources.json", effect: ask }
-  - { action: shell, resource: "git push *", effect: deny }
-  # kreview flow: fetch the patch and move between local branches
-  - { action: shell, resource: "git review -d *", effect: allow }
-  - { action: shell, resource: "git switch *", effect: allow }
-  - { action: shell, resource: "git switch -f*", effect: ask }
-  - { action: shell, resource: "git switch * -f*", effect: ask }
-  - { action: shell, resource: "git switch -C *", effect: ask }
-  - { action: shell, resource: "git switch * -C *", effect: ask }
-  - { action: shell, resource: "git switch *--force*", effect: ask }
-  - { action: shell, resource: "git switch *--discard-changes*", effect: ask }
+# permission rules live in opencode.json agents.reviewer.permissions:
+# rtk cannot read frontmatter rules and would skip every rewrite
 ---
 
 You are a code reviewer. Your job is to find real problems in a change and
